@@ -9,7 +9,7 @@ instance.interceptors.request.use(
     function (config) {
         // Lấy token từ cookie
         let accessToken = Cookies.get("accesstoken");
-        // Nếu token tồn tại, thêm nó vào header Authorization
+        // Nếu token tồn tại, thêm nó vào HeaderAdmin Authorization
         if (accessToken) {
             config.headers.Authorization = `Bearer ${accessToken}`;
         }

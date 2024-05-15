@@ -1,11 +1,11 @@
 import React, { memo, useEffect, useState } from "react";
-import "./Header.scss";
+import "./HeaderAdmin.scss";
 import { useSelector } from "react-redux";
 import { FaRegUser } from "react-icons/fa";
 import Logo from "../../../styles/image/Logo.png";
 import withBase from "../../../hocs/withBase";
 
-function Header({ navigate }) {
+function HeaderAdmin({ navigate }) {
     const { user } = useSelector((state) => state.user);
     const [profilePicture, setProfilePicture] = useState(user?.profilePicture || '');
 
@@ -48,4 +48,4 @@ function Header({ navigate }) {
     );
 }
 
-export default withBase(memo(Header));
+export default withBase(memo(HeaderAdmin));
