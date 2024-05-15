@@ -1,0 +1,249 @@
+.payment{
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-box{
+    width: 600px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: red
+        }
+    }
+    
+    &--top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--center{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 1%;
+        &--box{
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+            align-items: center;
+            &--left{
+                width: 20%;
+                img{
+                    width: 100px;
+                    height: 100px;
+                }
+
+            }
+            &--center{
+                width: 50%;
+            }
+            &--right{
+                width: 20%;
+                display: flex;
+                p{
+                    padding:0 4px ;
+                    margin: 0;
+
+                }
+            }
+            &--delete{
+                width: 10%;
+                display: flex;
+                
+            }
+        }
+    }
+    &--user{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 1%;
+        span{
+           
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 2%;
+            p{
+            padding-right:10px ;
+            width: 20%;
+            font-weight: 600;
+            }
+            input{
+                width: 70%;
+                border: 1px solid #ccc;
+                color: black;
+            }
+        }
+    }
+    &--choose{
+        margin: 15px 0;
+        select{
+            padding: 5px;
+            outline: none;
+            border-radius: 10px;
+        }
+    }
+    &--order{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-radius: 4px;
+        margin-bottom: 1%;
+        &--box{
+            display: flex;
+            justify-content: space-between;
+            padding:0 8px;
+            p{
+                font-weight: 600;
+            }
+        }
+        &--pay{
+            width: 100%;
+            button{
+                width: 96%;
+                border-radius: 8px;
+                background-color: #0071E3;
+                color: white;
+                font-weight: 600;
+                outline: none;
+                padding: 12px 0;
+                border: none;
+                margin: 2%;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px){
+    .payment{
+        width: 100%;
+        padding: 0;
+        background-color: #F0F0F0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .payment-box{
+            width: 95%;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    color: red
+                }
+            }
+
+            &--top{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            &--center{
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                border-radius: 4px;
+                margin-bottom: 1%;
+                &--box{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 2px 0;
+                    align-items: center;
+                    &--left{
+                        width: 30%;
+                        img{
+                            width: 100px;
+                            height: 100px;
+                        }
+
+                    }
+                    &--center{
+                        width: 50%;
+                    }
+                    &--right{
+                        width: 20%;
+                        display: flex;
+                        p{
+                            padding:0 4px ;
+                            margin: 0;
+
+                        }
+                    }
+                    &--delete{
+                        width: 10%;
+                        display: flex;
+
+                    }
+                }
+            }
+            &--user{
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                border-radius: 4px;
+                margin-bottom: 1%;
+                span{
+
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 2%;
+                    p{
+                        padding-right:10px ;
+                        width: 20%;
+                        font-weight: 600;
+                    }
+                    input{
+                        width: 70%;
+                        border: 1px solid #ccc;
+                        color: black;
+                    }
+                }
+            }
+            &--choose{
+                margin: 15px 0;
+                select{
+                    padding: 5px;
+                    outline: none;
+                    border-radius: 10px;
+                }
+            }
+            &--order{
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: white;
+                border-radius: 4px;
+                margin-bottom: 1%;
+                &--box{
+                    display: flex;
+                    justify-content: space-between;
+                    padding:0 8px;
+                    p{
+                        font-weight: 600;
+                    }
+                }
+                &--pay{
+                    width: 100%;
+                    button{
+                        width: 96%;
+                        border-radius: 8px;
+                        background-color: #0071E3;
+                        color: white;
+                        font-weight: 600;
+                        outline: none;
+                        padding: 12px 0;
+                        border: none;
+                        margin: 2%;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.category{
+    max-width: 100%;
+    background-color: transparent;
+    overflow-y: scroll;
+    &--create {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 8px 18px;
+        &--btn{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    }
+    .drawer-form{
+        width: 80%;
+       padding: 0 10%;
+       label{
+        font-weight: 600;
+       }
+       span{
+        width: 100%;
+        input{
+         border: 1px solid #ccc !important;
+         color: black !important;
+         padding: 4px 12px;
+         margin-top: 4px;
+         max-width: 90% !important;
+         height: auto;
+        }
+       }
+       &--image{
+        margin: 20px 0;
+         &--img{
+            padding: 8px 12px;
+            background-color: black;
+             color: white;
+            border-radius: 8px;
+            cursor: pointer;
+
+            }
+       }
+       &--btn{
+        width: 96%;
+        button{
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 4px 0;
+            font-weight: 600;
+            border-radius: 8px;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+       }
+    }
+}

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="change package.json v4">
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="4ca99aad-cae3-430e-a51f-868ffe7c9a0a" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2fzaYZZ5kyXRuVvFEKloURIG5Ai" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.backend/Dockerfile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Document_NTTU/Semester_8_2023-2024/In-depth software technology topics 2/DoAn/FullStack/frontend/public",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.client.executor": "Run",
+    "npm.server.executor": "Run",
+    "npm.start (1).executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.test.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "D:\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Document_NTTU\Semester_8_2023-2024\In-depth software technology topics 2\DoAn\FullStack\frontend\public" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.client">
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="client" type="js.build_tools.npm" temporary="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="server" type="js.build_tools.npm" temporary="true">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.client" />
+      <item itemvalue="npm.server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.client" />
+        <item itemvalue="npm.server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-2e7d6887c066-JavaScript-WS-241.15989.47" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="" />
+      <created>1714806408298</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714806408298</updated>
+      <workItem from="1714806409463" duration="1544000" />
+      <workItem from="1714808335163" duration="330000" />
+      <workItem from="1714818360262" duration="33000" />
+      <workItem from="1714818797221" duration="1685000" />
+      <workItem from="1714820506829" duration="1258000" />
+      <workItem from="1714822392661" duration="242000" />
+      <workItem from="1714822640434" duration="38000" />
+      <workItem from="1714822681301" duration="61000" />
+      <workItem from="1714822751473" duration="802000" />
+      <workItem from="1714826983245" duration="890000" />
+      <workItem from="1714832171763" duration="610000" />
+      <workItem from="1714848595537" duration="1517000" />
+      <workItem from="1714879231303" duration="37000" />
+      <workItem from="1714879283851" duration="60000" />
+      <workItem from="1714879393013" duration="51000" />
+      <workItem from="1714879456323" duration="5589000" />
+      <workItem from="1714888521511" duration="6571000" />
+      <workItem from="1714933628876" duration="1236000" />
+      <workItem from="1714987867303" duration="904000" />
+      <workItem from="1715013367306" duration="59000" />
+      <workItem from="1715013601583" duration="2220000" />
+      <workItem from="1715055202403" duration="3221000" />
+      <workItem from="1715075889976" duration="1803000" />
+      <workItem from="1715095377218" duration="5531000" />
+      <workItem from="1715138413521" duration="2536000" />
+      <workItem from="1715149382476" duration="8950000" />
+      <workItem from="1715175522080" duration="6744000" />
+      <workItem from="1715219751178" duration="6941000" />
+      <workItem from="1715229893949" duration="33000" />
+      <workItem from="1715245177411" duration="2509000" />
+      <workItem from="1715247721092" duration="3816000" />
+      <workItem from="1715251793503" duration="4717000" />
+      <workItem from="1715257412648" duration="14000" />
+      <workItem from="1715257921554" duration="9000" />
+      <workItem from="1715259838287" duration="634000" />
+      <workItem from="1715261904228" duration="16037000" />
+      <workItem from="1715281879615" duration="1348000" />
+      <workItem from="1715283678750" duration="4441000" />
+      <workItem from="1715313817613" duration="16371000" />
+      <workItem from="1715351177379" duration="10244000" />
+      <workItem from="1715402994962" duration="20004000" />
+      <workItem from="1715433986688" duration="10161000" />
+      <workItem from="1715531002620" duration="678000" />
+      <workItem from="1715576895110" duration="5579000" />
+      <workItem from="1715605271910" duration="1443000" />
+      <workItem from="1715616177122" duration="2222000" />
+      <workItem from="1715654340738" duration="13394000" />
+      <workItem from="1715702472878" duration="14510000" />
+      <workItem from="1715737124401" duration="12936000" />
+      <workItem from="1715772624700" duration="3928000" />
+    </task>
+    <task id="LOCAL-00001" summary="change .env">
+      <option name="closed" value="true" />
+      <created>1715248337821</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715248337821</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change package.json">
+      <option name="closed" value="true" />
+      <created>1715249446557</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715249446557</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change package.json">
+      <option name="closed" value="true" />
+      <created>1715250394306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715250394306</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change package.json v4">
+      <option name="closed" value="true" />
+      <created>1715252050392</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715252050392</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/frontend" />
+    </ignored-roots>
+    <MESSAGE value="change .env" />
+    <MESSAGE value="change package.json" />
+    <MESSAGE value="change package.json v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="change package.json v4" />
+  </component>
+</project>

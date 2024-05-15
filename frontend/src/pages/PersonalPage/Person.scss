@@ -1,0 +1,154 @@
+.personal {
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0; // Thêm khoảng trống trên và dưới để hộp nổi bật hơn
+    .content-personal {
+        width: 80%;
+        max-width: 800px; // Giới hạn chiều rộng tối đa của hộp chứa
+        background-color: #fff; // Màu nền trắng cho hộp chứa
+        border-radius: 10px; // Bo tròn góc
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Đổ bóng
+        padding: 20px; // Khoảng trống bên trong hộp
+        display: flex;
+        flex-direction: column; // Bố trí các phần tử theo chiều dọc
+        align-items: center; // Căn giữa các phần tử theo chiều ngang
+    }
+    &--box {
+        display: flex;
+        flex-direction: column; // Bố trí các phần tử theo chiều dọc
+        align-items: center; // Căn giữa các phần tử theo chiều ngang
+        width: 100%; // Chiều rộng của hộp chứa
+        &--top {
+            margin-bottom: 20px;
+            .profile-picture {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: darkgray;
+                background-size: cover; // Đảm bảo hình ảnh lấp đầy khung tròn
+                background-position: center; // Đảm bảo hình ảnh nằm giữa khung tròn
+                overflow: hidden; // Đảm bảo hình ảnh nằm gọn trong khung tròn
+                .icon {
+                    width: 60px;
+                    height: 86px;
+                    color: white;
+                }
+            }
+        }
+        &--bottom {
+            width: 100%; // Chiều rộng của hộp chứa
+            span {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                label {
+                    font-weight: 700;
+                    width: 14%; // Giảm chiều rộng của nhãn
+                    text-align: left;
+                    padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
+                }
+                input {
+                    width: 100%; // Tăng chiều rộng của input
+                    border: 1px solid #ccc;
+                    color: black;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+// Các media queries để đảm bảo responsive
+@media screen and (max-width: 1440px) {
+    .personal {
+        padding: 20px 0;
+        .content-personal {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .personal {
+        padding: 20px 0;
+        .content-personal {
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .personal {
+        padding: 20px 0;
+        .content-personal {
+            width: 100%;
+        }
+        &--box {
+            padding: 10px 0;
+            &--top {
+                margin-bottom: 20px;
+            }
+            &--bottom {
+                width: 100%; // Điều chỉnh lại chiều rộng nếu cần thiết
+                span {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 8px;
+                    label {
+                        font-weight: 700;
+                        width: 35%; // Điều chỉnh lại chiều rộng nhãn cho phù hợp màn hình nhỏ
+                        text-align: left;
+                        padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
+                    }
+                    input {
+                        width: 65%; // Điều chỉnh lại chiều rộng input cho phù hợp màn hình nhỏ
+                        border: 1px solid #ccc;
+                        color: black;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .personal {
+        padding: 20px 0;
+        .content-personal {
+            width: 100%;
+        }
+        &--box {
+            padding: 10px 0;
+            &--top {
+                margin-bottom: 20px;
+            }
+            &--bottom {
+                width: 100%; // Điều chỉnh lại chiều rộng nếu cần thiết
+                span {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 8px;
+                    label {
+                        font-weight: 700;
+                        width: 40%; // Điều chỉnh lại chiều rộng nhãn cho phù hợp màn hình nhỏ
+                        text-align: left;
+                        padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
+                    }
+                    input {
+                        width: 60%; // Điều chỉnh lại chiều rộng input cho phù hợp màn hình nhỏ
+                        border: 1px solid #ccc;
+                        color: black;
+                        padding: 4px;
+                    }
+                }
+            }
+        }
+    }
+}

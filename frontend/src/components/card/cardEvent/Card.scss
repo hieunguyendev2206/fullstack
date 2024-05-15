@@ -1,0 +1,47 @@
+.box-card-event{
+    background-color: #323232;
+    border-radius: 10px;
+    margin: 0 20px;
+    cursor: pointer;
+    &--image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 12px 0;
+    img{
+        width: 120px;
+    }
+    }
+    &--content{
+        display: flex;
+        flex-direction: column;
+        margin: 12px 0;
+        &--name{
+            text-shadow: 1px ;
+            margin: 0;
+        }
+        &--price{
+            color: #ccc;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin: 4px 0;
+        }
+        &--sale{
+            color: #ff9921;
+            font-weight: 600;
+            margin: 4px 0;
+        }
+        &--loader{
+            text-align: center;
+            color: black;
+            background-color: white;
+            margin: 12px 8px;
+            border-radius: 8px;
+            &--color{
+                height: 100%;
+                background-color: #ff9921;
+                border-radius: 8px;
+            }
+        }
+    }
+}

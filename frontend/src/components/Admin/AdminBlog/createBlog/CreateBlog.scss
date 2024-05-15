@@ -1,0 +1,66 @@
+.create{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+
+    &--box{
+        width: 1200px;
+        margin-top: 2%;
+        text-align: left;
+        overflow-x: scroll;
+       &--lable{
+        &--name{
+        font-weight: 600;
+           width: 100%;
+        }
+        &--input {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 8px;
+            margin: 4px 0px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+       }
+    }
+    &--image{
+        width: 100%;
+        text-align: left;
+        margin-top: 2%;
+        &--bt{
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+    }
+    &--submit{
+        text-align: center;
+        width: 100%;
+        &--btn{
+            width:60%;
+            border-radius: 8px;
+            border: none;
+            background-color: black;
+            color: white;
+            padding: 14px 0;
+
+            &:hover{
+                opacity: 0.8;
+            }
+            &:disabled{
+                cursor: default;
+            }
+        }
+
+    }
+}
+.ModalEdit{
+    width: 100%;
+    text-align: center;
+    &--close{
+        text-align: end;
+        cursor: pointer;
+    }
+}

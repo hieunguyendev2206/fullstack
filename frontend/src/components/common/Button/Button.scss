@@ -1,0 +1,33 @@
+.button {
+  background-color: red;
+  color: white;
+  width: 50%;
+  border: none;
+  border-radius: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(83, 83, 86, .8);
+    //box-shadow: 9px 9px 16px rgba(0, 0, 0, .44), -9px -9px 16px rgba(83, 83, 86, .8); //rgba(255, 0, 0, 0.8)
+  }
+}
+
+.button-login {
+  background-color: #3b3838;
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(83, 83, 86, .8);
+    //box-shadow: 9px 9px 16px rgba(0, 0, 0, .44), -9px -9px 16px rgba(83, 83, 86, .8); //rgba(255, 0, 0, 0.8)
+  }
+}

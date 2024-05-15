@@ -1,0 +1,140 @@
+.order {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+
+  .content {
+    width: 80%;
+    margin: 2% 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &--list {
+    display: grid;
+    grid-template-columns: 100px 120px 120px 150px 150px 150px 100px;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+
+    &--item {
+      text-align: left;
+
+      &.image {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .btn {
+        background-color: #f44336;
+        color: white;
+        margin: 0;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #e53935;
+        }
+      }
+
+      &.action {
+        display: flex;
+        align-items: center; // Đảm bảo các thành phần con căn giữa theo chiều dọc
+        justify-content: space-between; // Phân bổ khoảng cách đều giữa các thành phần con
+
+        h4 {
+          margin-right: auto; // Đẩy nút "Hủy" ra phía cuối bên phải
+        }
+
+        .btn {
+          margin-left: 10px; // Thêm khoảng cách giữa thẻ h4 và nút
+        }
+      }
+    }
+  }
+
+  .background {
+    width: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 1px #ccc;
+  }
+
+  // Responsive adjustments
+
+  @media (max-width: 2540px) {
+    .content {
+      width: 90%;
+    }
+    &--list {
+      grid-template-columns: 200px 100px 150px 300px 150px 120px 135px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .content {
+      width: 90%;
+    }
+    &--list {
+      grid-template-columns: 100px 90px 90px 300px 110px 120px 135px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      width: 100%;
+    }
+    &--list {
+      grid-template-columns: 80px 80px 80px 180px 80px 80px 70px;
+      grid-gap: 10px;
+    }
+
+    .btn {
+      padding: 3px 6px;
+    }
+  }
+  @media (max-width: 480px) {
+    .content {
+      width: 100%;
+    }
+    &--list {
+      display: block;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &--item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      &.action {
+        h4 {
+          display: none;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      padding: 6px 0;
+    }
+  }
+}

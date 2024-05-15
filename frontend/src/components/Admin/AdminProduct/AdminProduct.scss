@@ -1,0 +1,81 @@
+.product-admin {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  overflow-y: auto;
+  overflow-x: hidden; // Ẩn thanh cuộn ngang
+  box-sizing: border-box;
+
+  &--create {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: 8px 18px;
+    box-sizing: border-box;
+
+    &--btn {
+      background-color: black;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      display: flex;
+    }
+  }
+
+  .drawer-form-product {
+    width: 100%;
+    max-width: 800px; // Giới hạn chiều rộng
+    padding: 0 10%;
+    box-sizing: border-box;
+
+    label {
+      font-weight: 600;
+    }
+
+    span {
+      width: 100%;
+
+      input {
+        width: 100%; // Đặt chiều rộng 100%
+        border: 1px solid #ccc !important;
+        color: black !important;
+        padding: 4px 12px;
+        margin-top: 4px;
+        height: auto;
+      }
+    }
+
+    &--image {
+      margin: 20px 0;
+
+      &--img {
+        padding: 8px 12px;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    }
+
+    &--btn {
+      width: 100%;
+
+      button {
+        width: 100%;
+        background-color: black;
+        color: white;
+        padding: 4px 0;
+        font-weight: 600;
+        border-radius: 8px;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

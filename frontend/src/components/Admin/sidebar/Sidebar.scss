@@ -1,0 +1,24 @@
+.sidebar{
+    height: 100%;
+    width: 100%;
+    background-color: #3E3E3F;
+    color: white;
+    &--list{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &--icon{
+            width: 20px;
+
+        }
+        &--name{
+            padding-left: 4px;
+
+        }
+    }
+}
+// .active{
+//     background-color: #3E3E3F;
+//     width: 100%;
+// }

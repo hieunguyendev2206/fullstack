@@ -1,0 +1,358 @@
+  .auth {
+  height: 100vh;
+  background-image: url("../../styles/image/bglogin.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  grid-template-columns: 2fr 1fr;
+  overflow: hidden;
+  margin: 0;
+
+  &--left {
+    z-index: 10;
+    color: white;
+
+    &--login {
+      h1 {
+        font-size: 42px
+      }
+    }
+  }
+
+  &--right {
+    z-index: 10;
+    color: white;
+    height: 100%;
+    background-color: #0000006b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--login {
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      width: 100%;
+
+      h1 {
+        text-align: center;
+      }
+
+      &--form {
+        color: white;
+        padding-left: 4%;
+        padding-right: 4%;
+
+        label {
+          display: flex;
+          font-size: 20px;
+          font-weight: 600;
+          padding-left: 2px;
+        }
+
+        &--item {
+          display: block;
+          padding: 12px;
+
+          input {
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 10px;
+            padding: 8px;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: white;
+          }
+        }
+
+        &--submit {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 5% 0;
+        }
+      }
+
+    }
+
+    p {
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .auth {
+    height: 100vh;
+    background-image: url("../../styles/image/bglogin.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    &--left {
+      display: none;
+    }
+
+    &--right {
+      z-index: 10;
+      color: white;
+      height: 80%;
+      background-color: #0000006b;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+
+      &--login {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+        }
+
+        &--form {
+          color: white;
+          padding-left: 4%;
+          padding-right: 4%;
+
+          label {
+            display: flex;
+            font-size: 20px;
+            font-weight: 600;
+            padding-left: 2px;
+          }
+
+          &--item {
+            display: block;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 12px;
+
+            input {
+              outline: none;
+              border-radius: 10px;
+              padding: 8px;
+              background-color: transparent;
+              box-shadow: none;
+              color: white;
+              border: none;
+              width: 100%;
+            }
+          }
+
+          &--submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            padding-right: 4%;
+          }
+        }
+
+      }
+
+      p {
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .auth {
+    height: 100vh;
+    background-image: url("../../styles/image/bglogin.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    &--left {
+      display: none;
+    }
+
+    &--right {
+      z-index: 10;
+      color: white;
+      height: 80%;
+      background-color: #0000006b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+
+      &--login {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+        }
+
+        &--form {
+          color: white;
+          padding-left: 4%;
+
+          label {
+            display: flex;
+            font-size: 20px;
+            font-weight: 600;
+            padding-left: 2px;
+          }
+
+          &--item {
+            display: block;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 12px;
+
+            input {
+              outline: none;
+              border-radius: 10px;
+              padding: 8px;
+              background-color: transparent;
+              box-shadow: none;
+              color: white;
+              border: none;
+              width: 100%;
+            }
+          }
+
+          &--submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 4%;
+            padding-bottom: 4%;
+            padding-right: 4%;
+          }
+        }
+
+      }
+
+      p {
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth {
+    height: 100vh;
+    background-image: url("../../styles/image/bglogin.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    &--left {
+      display: none;
+    }
+
+    &--right {
+      z-index: 10;
+      color: white;
+      height: 80%;
+      background-color: #0000006b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+
+      &--login {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+        }
+
+        &--form {
+          color: white;
+          padding-left: 4%;
+          padding-right: 4%;
+
+          label {
+            display: flex;
+            font-size: 20px;
+            font-weight: 600;
+            padding-left: 2px;
+          }
+
+          &--item {
+            display: block;
+            padding: 12px 0;
+
+            input {
+              outline: none;
+              border-radius: 10px;
+              padding: 8px;
+              background-color: transparent;
+              box-shadow: none;
+              color: white;
+              border: none;
+              width: 100%;
+            }
+          }
+
+          &--submit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2% 0;
+          }
+        }
+
+      }
+
+      p {
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+
+  }
+}

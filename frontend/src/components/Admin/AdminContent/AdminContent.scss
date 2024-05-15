@@ -1,0 +1,121 @@
+.AdminCT{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    &--left{
+        min-width: 30%;
+    }
+    &--right{
+        min-width: 70%;
+        overflow-x: auto;
+    }
+
+}
+
+@media screen and (max-width: 2560px) {
+    .AdminCT{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        &--left{
+            max-width: 80%;
+
+            .sidebar {
+                padding: 0 10px;
+            }
+        }
+        &--right{
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .AdminCT{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        &--left{
+            max-width: 80%;
+
+            .sidebar {
+                padding: 0 10px;
+            }
+        }
+        &--right{
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .AdminCT{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        &--left{
+            max-width: 80%;
+
+            .sidebar {
+                padding: 0 10px;
+            }
+        }
+        &--right{
+            max-width: 100%;
+            margin: 20px 20px;
+            overflow-x: auto;
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .AdminCT{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        &--left{
+            max-width: 74%;
+
+            .sidebar {
+                font-size: 12px;
+                padding-right: 10px;
+            }
+        }
+        &--right{
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    }
+}
+@media screen and (max-width: 480px) {
+    .AdminCT{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 9fr;
+        &--left{
+            max-width: 100%;
+
+            .sidebar {
+                font-size: 12px;
+                padding-right: 20px;
+            }
+        }
+        &--right{
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+    }
+}
