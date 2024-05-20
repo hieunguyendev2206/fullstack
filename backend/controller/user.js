@@ -175,7 +175,7 @@ const updateUser = async (req, res) => {
         if (response)
             return res.status(200).json({
                 success: true,
-                user: response.user,
+                user: response.user
             });
     } catch (e) {
         return res.status(500).json({
@@ -183,6 +183,23 @@ const updateUser = async (req, res) => {
         });
     }
 };
+
+const updateUserAsAdmin = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        const user = await User.findByIdAndUpdate(id, updateData, { new: true });
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+
+        res.status(200).json({ success: true, user });
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
 
 const addProductCart = async (req, res) => {
     try {
@@ -227,6 +244,7 @@ module.exports = {
     addProductCart,
     deleteUser,
     updateUser,
+    updateUserAsAdmin,
     removeProductCart,
     uploadProfilePicture
 };

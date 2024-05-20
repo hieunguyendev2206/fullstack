@@ -8,6 +8,7 @@ export const getProduct = async () => {
         console.log(e);
     }
 };
+
 export const getProductCategory = async (category) => {
     try {
         const res = await axios.get(`/product/get-products?category=${category}`);
@@ -16,6 +17,7 @@ export const getProductCategory = async (category) => {
         console.log(e);
     }
 };
+
 export const getProductId = async (id) => {
     try {
         const res = await axios.get(`/product/get-product/${id}`);
@@ -24,6 +26,7 @@ export const getProductId = async (id) => {
         console.log(e);
     }
 };
+
 export const getProductSearch = async (name) => {
     try {
         const res = await axios.get(`/product/get-products?name=${name}`);
@@ -41,6 +44,7 @@ export const createProduct = async (data) => {
         console.log(e);
     }
 };
+
 export const deleteProduct = async (id) => {
     try {
         const res = await axios.delete(`/product/delete-product/${id}`, id);
@@ -49,6 +53,7 @@ export const deleteProduct = async (id) => {
         console.log(e);
     }
 };
+
 export const updateProduct = async (id, data) => {
     try {
         const res = await axios.put(`/product/update-product/${id}`, data);

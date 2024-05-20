@@ -19,6 +19,7 @@ function User() {
                     name: el?.name,
                     email: el?.email,
                     phone: el?.phone,
+                    address: el?.address,
                     profilePicture: el?.profilePicture,
                     role: el?.role,
                 }));
@@ -36,6 +37,7 @@ function User() {
         { Header: "Name", accessor: "name" },
         { Header: "Email", accessor: "email" },
         { Header: "Phone", accessor: "phone" },
+        { Header: "Address", accessor: "address" },
         {
             Header: "Image",
             accessor: "profilePicture",
@@ -117,17 +119,18 @@ function User() {
     };
 
     const handleUpdate = async (data) => {
-        const { id, name, email, phone, role } = data.values;
+        const { id, name, email, phone, address, role } = data.values;
         const { value: formValues } = await Swal.fire({
             title: "Cập nhật thông tin người dùng",
             html: `
                 <input id="swal-input1" class="swal2-input" placeholder="Tên" value="${name || ''}">
                 <input id="swal-input2" class="swal2-input" placeholder="Email" value="${email || ''}">
                 <input id="swal-input3" class="swal2-input" placeholder="Số điện thoại" value="${phone || ''}">
+                <input id="swal-input4" class="swal2-input" placeholder="Địa chỉ" value="${address || ''}">
                 <div>
-                    <select id="swal-input4" class="swal2-input">
-                        <option value="user" ${role === "user" ? "selected" : ""}>User</option>
-                        <option value="admin" ${role === "admin" ? "selected" : ""}>Admin</option>
+                    <select style="margin-top: 10px" id="swal-input5" class="swal2-input">
+                        <option value="User" ${role === "User" ? "selected" : ""}>User</option>
+                        <option value="Admin" ${role === "Admin" ? "selected" : ""}>Admin</option>
                     </select>
                 </div>
             `,
@@ -138,23 +141,26 @@ function User() {
                     document.getElementById("swal-input2").value,
                     document.getElementById("swal-input3").value,
                     document.getElementById("swal-input4").value,
+                    document.getElementById("swal-input5").value,
                 ];
             },
         });
 
         if (formValues) {
-            const [updatedName, updatedEmail, updatedPhone, updatedRole] = formValues;
+            const [updatedName, updatedEmail, updatedPhone, updateAddress, updatedRole] = formValues;
             console.log("Updating user with data:", {
                 name: updatedName,
                 email: updatedEmail,
                 phone: updatedPhone,
+                address: updateAddress,
                 role: updatedRole,
             });
             try {
-                const res = await UserApi.updateUser(id, {
+                const res = await UserApi.updateUserAdmin(id, {
                     name: updatedName,
                     email: updatedEmail,
                     phone: updatedPhone,
+                    address: updateAddress,
                     role: updatedRole,
                 });
                 if (res.success) {

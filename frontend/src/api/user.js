@@ -40,6 +40,11 @@ export const updateUser = async (id, data) => {
     return res.data;
 };
 
+export const updateUserAdmin = async (id, data) => {
+    const res = await  axios.put(`/user/update-user-admin/${id}`, data);
+    return res.data;
+};
+
 export const addCart = async (id, data) => {
     const res = await axios.patch(`/user/add-card/${id}`, data);
     return res.data;

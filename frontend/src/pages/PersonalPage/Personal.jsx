@@ -14,7 +14,7 @@ function Personal({ navigate }) {
     const [valueUser, setValueUser] = useState({
         name: '',
         phone: '',
-        address: '',
+        address: ''
     });
     const [file, setFile] = useState(null);
     const [profilePicture, setProfilePicture] = useState(user?.profilePicture || '');
@@ -28,15 +28,15 @@ function Personal({ navigate }) {
     useEffect(() => {
         setValueUser({
             name: user?.name,
-            address: user?.address,
             phone: user?.phone,
+            address: user?.address
         });
         setProfilePicture(user?.profilePicture);
     }, [user]);
 
     const handleUpdate = async () => {
         try {
-            if (!valueUser.name || !valueUser.address || !valueUser.phone) {
+            if (!valueUser.name || !valueUser.phone || !valueUser.address) {
                 toast.warning('Bạn phải điền đầy đủ thông tin');
                 return;
             }
@@ -70,7 +70,7 @@ function Personal({ navigate }) {
 
         if (file.size > maxFileSize) {
             toast.warning('Kích thước tệp quá lớn. Vui lòng chọn tệp nhỏ hơn 2MB.');
-            setFile(null); // Đảm bảo giá trị file được đặt lại nếu vượt quá giới hạn
+            setFile(null);
             return;
         }
 

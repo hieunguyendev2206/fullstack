@@ -8,6 +8,7 @@ export const createOrder = async (data) => {
         console.log(e);
     }
 };
+
 export const getOrders = async () => {
     try {
         const res = await axios.get("/order/get-orders");
@@ -43,6 +44,7 @@ export const deleteOrder = async (id) => {
         console.log(e);
     }
 };
+
 export const updateStatusOrder = async (id, data) => {
     try {
         const res = await axios.patch(`/order/update-order/${id}`, data);

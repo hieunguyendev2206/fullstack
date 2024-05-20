@@ -31,6 +31,14 @@ router.put("/update-user/:id", validateDto(Joi.object({
     address: stringReq,
 })), verifyToken, userController.updateUser);
 
+router.put("/update-user-admin/:id", validateDto(Joi.object({
+    name: stringReq,
+    email: stringReq,
+    phone: stringReq,
+    address: stringReq,
+    role: stringReq
+})), verifyToken, isAdmin, userController.updateUserAsAdmin);
+
 
 router.delete("/delete/:id", verifyToken, isAdmin, userController.deleteUser);
 

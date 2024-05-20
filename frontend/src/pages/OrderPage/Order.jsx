@@ -47,7 +47,7 @@ function Order() {
                 ) : (
                     dataOrder.map((el) => (
                         <div className="order--list" key={el._id}>
-                            <div className="order--list--item image">
+                        <div className="order--list--item image">
                                 <img style={{ width: "100px", height: "100px" }} src={el?.products[0]?.product?.image[0].url} alt="Hình ảnh sản phẩm" />
                             </div>
                             <div style={{ fontWeight: "600" }} className="order--list--item">

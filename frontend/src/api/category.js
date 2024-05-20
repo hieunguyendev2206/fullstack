@@ -17,6 +17,7 @@ export const deleteCategory = async (id) => {
         console.log(e);
     }
 };
+
 export const createCategory = async (data) => {
     try {
         const res = await axios.post("/category/creare-category", data);
@@ -25,6 +26,7 @@ export const createCategory = async (data) => {
         console.log(e);
     }
 };
+
 export const updateCategory = async (id, data) => {
     try {
         const res = await axios.put(`category/update-category/${id}`, data);

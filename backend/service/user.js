@@ -23,7 +23,7 @@ const register = async (data) => {
                 password: hashedPassword,
                 role: role,
                 verified: false,
-                verificationExpires: Date.now() + 1 * 60 * 1000 // 1 minute from now
+                verificationExpires: Date.now() + 60 * 1000 // 1 minute from now
             });
 
             const verificationToken = jwt.sign(
@@ -264,14 +264,41 @@ const updateUser = (id, data) => {
         try {
             const user = await User.findById(id);
             if (!user) {
+                return resolve({
+                    success: false,
+                    message: "Không tìm thấy người dùng!",
+                });
+            }
+            user.name = data.name;
+            user.phone = data.phone;
+            user.address = data.address;
+            await user.save();
+            resolve({
+                success: true,
+                user,
+            });
+        } catch (err) {
+            console.log("Error in updateUser service:", err);
+            reject(err);
+        }
+    });
+};
+
+const updateUserAdmin = (id, data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const user = await User.findById(id);
+            if (!user) {
                 resolve({
                     success: false,
                     message: "Không tìm thấy người dùng !",
                 });
             }
             user.name = data.name;
+            user.email = data.email;
             user.phone = data.phone;
             user.address = data.address;
+            user.role = data.role;
             await user.save();
             resolve({
                 success: true,
@@ -364,6 +391,7 @@ module.exports = {
     refreshToken,
     deleteUser,
     updateUser,
+    updateUserAdmin,
     addProductCart,
     removeProductCart,
 };
