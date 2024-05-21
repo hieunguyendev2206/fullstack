@@ -56,7 +56,7 @@ function Header({navigate, dispatch}) {
     };
 
     const handleNavigateBlog = () => {
-        setActive(7);
+        setActive(8);
         setListMenuRp(false);
         navigate("/blog");
     };
@@ -184,7 +184,7 @@ function Header({navigate, dispatch}) {
                         })}
                         {data && (
                             <div
-                                className={`box  ${active === 7 && "active"}`}
+                                className={`box  ${active === 8 && "active"}`}
                                 onClick={handleNavigateBlog}
                             >
                                 <p className="item">Tin Tức</p>

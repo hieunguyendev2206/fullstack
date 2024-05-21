@@ -19,7 +19,7 @@ function CreateBlog({setActive}) {
         reset,
     } = useForm();
 
-    const handleImg = (e) => {
+    const handleImage = (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const render = new FileReader();
@@ -80,7 +80,7 @@ function CreateBlog({setActive}) {
                                 id="image"
                                 type="file"
                                 hidden
-                                onChange={(e) => handleImg(e)}
+                                onChange={(e) => handleImage(e)}
                             />
                             {image && (
                                 <img

@@ -54,7 +54,7 @@ export const colors = [
     {name: "Gray", hex: "#808080", rgb: "128, 128, 128"},
     {name: "Purple", hex: "#800080", rgb: "128, 0, 128"},
     {name: "Orange", hex: "#FFA500", rgb: "255, 165, 0"},
-    {name: "Brown", hex: "#A52A2A", rgb: "165, 42, 42"},
+    {name: "Brown", hex: "#260e0e", rgb: "165, 42, 42"},
     {name: "Pink", hex: "#C3158CFF", rgb: "195, 21, 140"},
     {name: "Gold", hex: "#FFD700", rgb: "255, 215, 0"},
     {name: "Silver", hex: "#C0C0C0", rgb: "192, 192, 192"},

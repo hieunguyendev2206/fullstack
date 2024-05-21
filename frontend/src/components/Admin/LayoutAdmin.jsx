@@ -1,10 +1,10 @@
 import React from "react";
-import HeaderAdmin from "./HeaderAdmin/HeaderAdmin";
+import Header from "./header/Header";
 
 function LayoutAdmin({children}) {
     return (
         <div>
-            <HeaderAdmin/>
+            <Header/>
             {children}
         </div>
     );

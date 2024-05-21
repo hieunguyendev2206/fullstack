@@ -22,7 +22,7 @@ function ManageBlog({setActive}) {
 
     const columns = [
         {
-            Header: "id",
+            Header: "ID",
             accessor: "id",
         },
         {
@@ -94,6 +94,7 @@ function ManageBlog({setActive}) {
             console.log(e);
         }
     };
+
     const handleDelete = async (data) => {
         try {
             const {id} = data?.values;
@@ -123,6 +124,7 @@ function ManageBlog({setActive}) {
             console.error("An error occurred:", err);
         }
     };
+
     const handleOpenEdit = (data) => {
         setDataEdit(data?.values);
         setImage(data?.values?.avatar?.url);
@@ -132,7 +134,8 @@ function ManageBlog({setActive}) {
     useEffect(() => {
         fetchData();
     }, []);
-    const handleImg = (e) => {
+    
+    const handleImage = (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const render = new FileReader();
@@ -220,7 +223,7 @@ function ManageBlog({setActive}) {
                                 id="image"
                                 type="file"
                                 hidden
-                                onChange={(e) => handleImg(e)}
+                                onChange={(e) => handleImage(e)}
                             />
                             {image && (
                                 <img

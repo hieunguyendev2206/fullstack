@@ -18,6 +18,7 @@ function Banner() {
     useEffect(() => {
         fetchbanner();
     }, []);
+
     const handleDelete = async (data) => {
         try {
             const id = data._id;
@@ -37,9 +38,11 @@ function Banner() {
                 }
             });
         } catch (e) {
+
         }
     };
-    const handleImg = (e) => {
+
+    const handleImage = (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const render = new FileReader();
@@ -50,6 +53,7 @@ function Banner() {
 
         render.readAsDataURL(file);
     };
+
     const handleCreate = async () => {
         try {
             if (!image) {
@@ -62,17 +66,16 @@ function Banner() {
                 toast.success("Tạo thành công");
             }
         } catch (e) {
+
         }
     };
+
     return (
         <div>
             <button
                 onClick={() => setisOpen(true)}
-                style={{
-                    margin: "2%",
-                }}
-                className="btn"
-            >
+                style={{margin: "2%",}}
+                className="btn">
                 Tạo mới
             </button>
             <div className="banner">
@@ -101,7 +104,7 @@ function Banner() {
                             id="image"
                             type="file"
                             hidden
-                            onChange={(e) => handleImg(e)}
+                            onChange={(e) => handleImage(e)}
                         />
                         {image && (
                             <img

@@ -154,12 +154,20 @@ function ProductInfor({dispatch, navigate}) {
                         <div className="productInfor--box--right">
                             <h1>{data?.name}</h1>
                             <div className="productInfor--box--right--price">
-                                <p className="productInfor--box--right--price--price">
-                                    {formatNumber(data?.price)}
-                                </p>
-                                <p className="productInfor--box--right--price--sale">
-                                    {formatNumber(price)}
-                                </p>
+                                {data?.discount > 0 ? (
+                                    <>
+                                        <p className="productInfor--box--right--price--price">
+                                            {formatNumber(data?.price)}
+                                        </p>
+                                        <p className="productInfor--box--right--price--sale">
+                                            {formatNumber(price)}
+                                        </p>
+                                    </>
+                                ) : (
+                                    <p className="productInfor--box--right--price--sale">
+                                        {formatNumber(data?.price)}
+                                    </p>
+                                )}
                             </div>
                             {<Rating star={Number(data?.ratings) || 5} size={20}/>}
                             <div className="productInfor--box--right--color">

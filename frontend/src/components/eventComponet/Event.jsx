@@ -10,7 +10,7 @@ function Event() {
     const { data } = useSelector((state) => state.products);
     const dataEvent = data ? data.filter((el) => el?.discount > 0) : [];
     const [timeLeft, setTimeLeft] = useState(null);
-    const endTime = new Date('May 22, 2024 08:45:00').getTime();
+    const endTime = new Date('June 22, 2024 08:45:00').getTime();
 
     useEffect(() => {
         const interval = setInterval(() => {

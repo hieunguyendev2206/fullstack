@@ -119,7 +119,7 @@ const login = (data) => {
             }
             if (!user.verified) {
                 if (user.verificationExpires < Date.now()) {
-                    await User.findByIdAndDelete(user._id); // Delete expired user
+                    await User.findByIdAndDelete(user._id);
                     reject({
                         success: false,
                         mes: "Tài khoản chưa được xác thực và đã hết hạn. Vui lòng đăng ký lại!",
@@ -147,7 +147,7 @@ const login = (data) => {
                     expiresIn: "10d",
                 }
             );
-            const refesToken = jwt.sign(
+            const refreshToken = jwt.sign(
                 {id: user.id, role: user.role},
                 process.env.TOKEN_SECRET,
                 {
@@ -158,7 +158,7 @@ const login = (data) => {
                 resolve({
                     success: true,
                     token,
-                    refesToken,
+                    refreshToken,
                 });
             }
         } catch (err) {
@@ -190,8 +190,6 @@ const getUsers = (options) => {
             if (name) {
                 const regex = new RegExp(name, "i");
                 const user = await User.find({name: regex}).select("-password");
-                // .skip(skip)
-                // .limit(limit)
                 if (user) {
                     resolve({
                         success: true,
@@ -205,8 +203,6 @@ const getUsers = (options) => {
                 }
             } else {
                 const user = await User.find().select("-password");
-                // .skip(skip)
-                // .limit(limit)
                 if (user) {
                     resolve({
                         success: true,

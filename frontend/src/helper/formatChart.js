@@ -5,10 +5,8 @@ export const formatPie = (data) => {
         return acc;
     }, {});
 
-    const pieChartData = Object.entries(statusCounts).map(([status, count]) => ({
+    return Object.entries(statusCounts).map(([status, count]) => ({
         name: status,
         value: count,
     }));
-
-    return pieChartData;
 };

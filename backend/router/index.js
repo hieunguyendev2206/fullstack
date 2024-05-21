@@ -19,4 +19,5 @@ const initialRouter = (app) => {
         return res.send("Server on");
     });
 };
+
 module.exports = initialRouter;

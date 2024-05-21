@@ -11,7 +11,7 @@ cloudinaryConnect();
 const uploadProfilePicture = async (req, res) => {
     try {
         if (!req.file) {
-            return res.status(400).json({success: false, mes: 'No file uploaded'});
+            return res.status(400).json({success: false, mes: 'No file uploaded !'});
         }
 
         const fileStr = req.file.buffer.toString('base64');
@@ -21,7 +21,7 @@ const uploadProfilePicture = async (req, res) => {
 
         const user = await User.findById(req.params.id);
         if (!user) {
-            return res.status(404).json({success: false, mes: 'User not found'});
+            return res.status(404).json({success: false, mes: 'User not found !'});
         }
 
         user.profilePicture = uploadResponse.secure_url;
@@ -64,12 +64,12 @@ const register = async (req, res) => {
 const verifyEmail = async (req, res) => {
     try {
         const {token} = req.query;
-        console.log("Token received in verifyEmail route:", token); // Log token received
+        console.log("Token received in verifyEmail route:", token);
         const response = await UserService.verifyEmail(token);
-        console.log("Response from verifyEmail service:", response); // Log response
+        console.log("Response from verifyEmail service:", response);
         return res.status(200).json(response);
     } catch (error) {
-        console.error("Error in verifyEmail route:", error); // Log error
+        console.error("Error in verifyEmail route:", error);
         return res.status(500).json(error);
     }
 };
@@ -186,20 +186,19 @@ const updateUser = async (req, res) => {
 
 const updateUserAsAdmin = async (req, res) => {
     try {
-        const { id } = req.params;
+        const {id} = req.params;
         const updateData = req.body;
-        const user = await User.findByIdAndUpdate(id, updateData, { new: true });
+        const user = await User.findByIdAndUpdate(id, updateData, {new: true});
 
         if (!user) {
-            return res.status(404).json({ success: false, message: "User not found" });
+            return res.status(404).json({success: false, message: "User not found"});
         }
 
-        res.status(200).json({ success: true, user });
+        res.status(200).json({success: true, user});
     } catch (error) {
-        res.status(500).json({ success: false, message: error.message });
+        res.status(500).json({success: false, message: error.message});
     }
 };
-
 
 const addProductCart = async (req, res) => {
     try {

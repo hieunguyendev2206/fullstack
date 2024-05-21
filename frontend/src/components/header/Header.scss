@@ -70,7 +70,7 @@
         justify-content: center;
         align-items: center;
         margin-left: 8px;
-        padding: 0 20px;
+        padding: 0 10px;
         cursor: pointer;
 
         .item {
@@ -257,7 +257,7 @@
     &--content {
       &--center {
         .box {
-          padding: 0 10px;
+          padding: 0;
         }
       }
     }

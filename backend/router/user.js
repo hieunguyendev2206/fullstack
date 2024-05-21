@@ -28,7 +28,7 @@ router.get("/verify-email", userController.verifyEmail);
 router.put("/update-user/:id", validateDto(Joi.object({
     name: stringReq,
     phone: stringReq,
-    address: stringReq,
+    address: stringReq
 })), verifyToken, userController.updateUser);
 
 router.put("/update-user-admin/:id", validateDto(Joi.object({

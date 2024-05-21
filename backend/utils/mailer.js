@@ -31,7 +31,7 @@ const createTransporter = async () => {
             accessToken,
             clientId: process.env.CLIENT_ID,
             clientSecret: process.env.CLIENT_SECRET,
-            refreshToken: process.env.REFRESH_TOKEN // corrected from TOKEN_SECRET
+            refreshToken: process.env.REFRESH_TOKEN
         }
     });
 };
