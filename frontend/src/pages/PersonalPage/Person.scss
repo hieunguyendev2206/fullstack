@@ -2,9 +2,26 @@
     width: 100%;
     background-color: #f0f0f0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     padding: 50px 0; // Thêm khoảng trống trên và dưới để hộp nổi bật hơn
+
+    .cover-container {
+        width: 100%;
+        max-width: 800px;
+        height: 200px;
+        position: relative;
+        cursor: pointer;
+        opacity: 0.7;
+
+        .cover-picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
     .content-personal {
         width: 80%;
         max-width: 800px; // Giới hạn chiều rộng tối đa của hộp chứa
@@ -15,14 +32,22 @@
         display: flex;
         flex-direction: column; // Bố trí các phần tử theo chiều dọc
         align-items: center; // Căn giữa các phần tử theo chiều ngang
+        margin-top: -50px; // Move up to overlap the cover picture
+        position: relative;
     }
+
     &--box {
         display: flex;
         flex-direction: column; // Bố trí các phần tử theo chiều dọc
         align-items: center; // Căn giữa các phần tử theo chiều ngang
         width: 100%; // Chiều rộng của hộp chứa
+
         &--top {
             margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+            z-index: 10; // Ensure the profile picture is above the cover picture
+
             .profile-picture {
                 display: flex;
                 justify-content: center;
@@ -34,6 +59,8 @@
                 background-size: cover; // Đảm bảo hình ảnh lấp đầy khung tròn
                 background-position: center; // Đảm bảo hình ảnh nằm giữa khung tròn
                 overflow: hidden; // Đảm bảo hình ảnh nằm gọn trong khung tròn
+                border: 4px solid white; // Optional: Add a border to separate from cover picture
+
                 .icon {
                     width: 60px;
                     height: 86px;
@@ -41,18 +68,22 @@
                 }
             }
         }
+
         &--bottom {
             width: 100%; // Chiều rộng của hộp chứa
+
             span {
                 display: flex;
                 align-items: center;
                 margin-top: 8px;
+
                 label {
                     font-weight: 700;
                     width: 14%; // Giảm chiều rộng của nhãn
                     text-align: left;
                     padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
                 }
+
                 input {
                     width: 100%; // Tăng chiều rộng của input
                     border: 1px solid #ccc;
@@ -64,10 +95,23 @@
     }
 }
 
+.btn-update {
+    margin: 10px 0;
+    padding: 8px 12px;
+    display: flex;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
 // Các media queries để đảm bảo responsive
 @media screen and (max-width: 1440px) {
     .personal {
         padding: 20px 0;
+
         .content-personal {
             width: 90%;
         }
@@ -77,6 +121,7 @@
 @media screen and (max-width: 1024px) {
     .personal {
         padding: 20px 0;
+
         .content-personal {
             width: 95%;
         }
@@ -86,26 +131,33 @@
 @media screen and (max-width: 768px) {
     .personal {
         padding: 20px 0;
+
         .content-personal {
-            width: 100%;
+            width: 92%;
         }
+
         &--box {
             padding: 10px 0;
+
             &--top {
                 margin-bottom: 20px;
             }
+
             &--bottom {
                 width: 100%; // Điều chỉnh lại chiều rộng nếu cần thiết
+
                 span {
                     display: flex;
                     align-items: center;
                     margin-top: 8px;
+
                     label {
                         font-weight: 700;
                         width: 35%; // Điều chỉnh lại chiều rộng nhãn cho phù hợp màn hình nhỏ
                         text-align: left;
                         padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
                     }
+
                     input {
                         width: 65%; // Điều chỉnh lại chiều rộng input cho phù hợp màn hình nhỏ
                         border: 1px solid #ccc;
@@ -116,31 +168,41 @@
             }
         }
     }
+    .personal .cover-container {
+        width: 92%;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .personal {
         padding: 20px 0;
+
         .content-personal {
-            width: 100%;
+            width: 85%;
         }
+
         &--box {
             padding: 10px 0;
+
             &--top {
                 margin-bottom: 20px;
             }
+
             &--bottom {
                 width: 100%; // Điều chỉnh lại chiều rộng nếu cần thiết
+
                 span {
                     display: flex;
                     align-items: center;
                     margin-top: 8px;
+
                     label {
                         font-weight: 700;
                         width: 40%; // Điều chỉnh lại chiều rộng nhãn cho phù hợp màn hình nhỏ
                         text-align: left;
                         padding-right: 10px; // Thêm khoảng cách bên phải cho nhãn
                     }
+
                     input {
                         width: 60%; // Điều chỉnh lại chiều rộng input cho phù hợp màn hình nhỏ
                         border: 1px solid #ccc;
