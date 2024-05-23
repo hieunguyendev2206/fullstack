@@ -41,7 +41,7 @@ export const updateUser = async (id, data) => {
 };
 
 export const updateUserAdmin = async (id, data) => {
-    const res = await  axios.put(`/user/update-user-admin/${id}`, data);
+    const res = await axios.put(`/user/update-user-admin/${id}`, data);
     return res.data;
 };
 
@@ -60,6 +60,17 @@ export const uploadUserProfilePicture = async (userId, file) => {
     formData.append('profilePicture', file);
 
     return await axios.post(`/user/${userId}/uploadProfilePicture`, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+        },
+    });
+};
+
+export const uploadUserCoverPicture = async (userId, file) => {
+    const formData = new FormData();
+    formData.append('coverPicture', file);
+
+    return await axios.post(`/user/${userId}/uploadCoverPicture`, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
         },

@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="added comment user limit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controller/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/router/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/router/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/service/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/service/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.scss" afterDir="false" />
-    </list>
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="Add feature to edit and delete comments (for admin)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,7 +177,7 @@
       <workItem from="1716320663526" duration="569000" />
       <workItem from="1716429256194" duration="170000" />
       <workItem from="1716430662217" duration="70000" />
-      <workItem from="1716435061163" duration="59000" />
+      <workItem from="1716435061163" duration="123000" />
     </task>
     <task id="LOCAL-00001" summary="change .env">
       <option name="closed" value="true" />
@@ -331,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716430722117</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Add feature to edit and delete comments (for admin)">
+      <option name="closed" value="true" />
+      <created>1716435167517</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716435167517</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +364,7 @@
     <MESSAGE value="all commit complete" />
     <MESSAGE value="add pictureUserRating" />
     <MESSAGE value="added comment user limit" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comment user limit" />
+    <MESSAGE value="Add feature to edit and delete comments (for admin)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add feature to edit and delete comments (for admin)" />
   </component>
 </project>

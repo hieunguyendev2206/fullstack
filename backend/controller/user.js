@@ -8,6 +8,36 @@ const upload = multer({storage: storage});
 cloudinaryConnect();
 
 
+const uploadCoverPicture = async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({ success: false, mes: 'No file uploaded!' });
+        }
+
+        const fileStr = req.file.buffer.toString('base64');
+        const uploadResponse = await cloudinary.uploader.upload(`data:image/jpeg;base64,${fileStr}`, {
+            upload_preset: 'ml_default',
+        });
+
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ success: false, mes: 'User not found!' });
+        }
+
+        user.coverPicture = uploadResponse.secure_url;
+        await user.save();
+
+        return res.status(200).json({
+            success: true,
+            user,
+        });
+    } catch (err) {
+        return res.status(500).json({
+            mes: err.message,
+        });
+    }
+};
+
 const uploadProfilePicture = async (req, res) => {
     try {
         if (!req.file) {
@@ -245,5 +275,6 @@ module.exports = {
     updateUser,
     updateUserAsAdmin,
     removeProductCart,
-    uploadProfilePicture
+    uploadProfilePicture,
+    uploadCoverPicture
 };

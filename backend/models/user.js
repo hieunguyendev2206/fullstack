@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     address: { type: String },
     verified: { type: Boolean, default: false },
     profilePicture: { type: String },
+    coverPicture: { type: String }, // Thêm trường ảnh bìa
     verificationExpires: { type: Date, required: false, default: null },
 });
 

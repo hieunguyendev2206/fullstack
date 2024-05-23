@@ -10,6 +10,7 @@ const upload = multer({storage: storage});
 
 
 router.post('/:id/uploadProfilePicture', upload.single('profilePicture'), userController.uploadProfilePicture);
+router.post('/:id/uploadCoverPicture', upload.single('coverPicture'), userController.uploadCoverPicture); // Thêm route cho upload ảnh bìa
 
 router.post("/register", userController.register);
 

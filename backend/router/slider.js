@@ -6,7 +6,7 @@ const router = require("express").Router();
 const Joi = require("joi");
 
 
-router.post("/creare-slider", validateDto(Joi.object({
+router.post("/create-slider", validateDto(Joi.object({
     image: stringReq,
 })), verifyToken, isAdmin, sliderController.createSlider);
 
