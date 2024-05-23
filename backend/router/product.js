@@ -38,5 +38,10 @@ router.put("/update-product/:id", validateDto(Joi.object({
 
 
 router.delete("/delete-product/:id", verifyToken, isAdmin, productController.deleteProduct);
+router.delete("/delete-review/:productId/:reviewId", verifyToken, isAdmin, productController.deleteReview);
+
+
+router.put("/update-review/:productId/:reviewId", verifyToken, productController.updateReview);
+
 
 module.exports = router;

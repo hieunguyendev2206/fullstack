@@ -209,7 +209,6 @@ const createReviews = (productId, data, userId) => {
                 return;
             }
 
-            // Kiểm tra xem người dùng đã bình luận chưa
             const hasReviewed = product.reviews.some(review => review.user.toString() === userId);
             if (hasReviewed) {
                 reject({
@@ -254,6 +253,64 @@ const createReviews = (productId, data, userId) => {
     });
 };
 
+const updateReview = (productId, reviewId, data) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const product = await Product.findById(productId);
+            if (!product) {
+                return reject({ success: false, message: "Product not found!" });
+            }
+
+            const review = product.reviews.id(reviewId);
+            if (!review) {
+                return reject({ success: false, message: "Review not found!" });
+            }
+
+            review.rating = data.rating;
+            review.comment = data.comment;
+
+            product.ratings = product.reviews.reduce((acc, cur) => acc + cur.rating, 0) / product.reviews.length;
+
+            await product.save();
+            resolve({ success: true, message: "Review updated successfully!", product });
+        } catch (err) {
+            reject({ success: false, message: err.message });
+        }
+    });
+};
+
+const deleteReview = (productId, reviewId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const product = await Product.findById(productId);
+            if (!product) {
+                return reject({ success: false, message: "Product not found!" });
+            }
+
+            const reviewIndex = product.reviews.findIndex(
+                (review) => review._id.toString() === reviewId
+            );
+
+            if (reviewIndex === -1) {
+                return reject({ success: false, message: "Review not found!" });
+            }
+
+            product.reviews.splice(reviewIndex, 1);
+
+            if (product.reviews.length > 0) {
+                product.ratings = product.reviews.reduce((acc, cur) => acc + cur.rating, 0) / product.reviews.length;
+            } else {
+                product.ratings = 0; // Hoặc giá trị mặc định của bạn
+            }
+
+            await product.save();
+            resolve({ success: true, message: "Review deleted successfully!" });
+        } catch (err) {
+            reject({ success: false, message: err.message });
+        }
+    });
+};
+
 
 module.exports = {
     createProduct,
@@ -262,4 +319,6 @@ module.exports = {
     deleteProduct,
     updateProduct,
     createReviews,
+    updateReview,
+    deleteReview
 };

@@ -1,37 +1,40 @@
-import React, {memo, useEffect, useState} from "react";
+import React, { memo, useEffect, useState } from "react";
 import "./ProductInfor.scss";
-import {useLocation, useParams} from "react-router-dom";
-import {createReview, getProductId} from "../../../api/product";
-import {formatNumber} from "../../../helper/format";
+import { useLocation, useParams } from "react-router-dom";
+import { createReview, getProductId, updateReview, deleteReview } from "../../../api/product";
+import { formatNumber } from "../../../helper/format";
 import withBase from "../../../hocs/withBase.js";
-import {getCartUser} from "../../../redux/slice/cartSlice.js";
-import {useSelector} from "react-redux";
+import { getCartUser } from "../../../redux/slice/cartSlice.js";
+import { useSelector } from "react-redux";
 import CardProductCbn from "../../../components/card/cardProduct/CardProductCbn.jsx";
-import {addCart} from "../../../api/user.js";
-import {toast} from "react-toastify";
+import { addCart } from "../../../api/user.js";
+import { toast } from "react-toastify";
 import Rating from "../../../components/ratting/Rating.jsx";
 import "moment/locale/vi";
 import ModalCpn from "../../../components/common/Modal/ModalCpn.jsx";
-import {IoMdClose} from "react-icons/io";
-import {IoStar, IoStarOutline} from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+import { IoStar, IoStarOutline } from "react-icons/io5";
 import Swal from "sweetalert2";
 
 const moment = require("moment");
 
-function ProductInfor({dispatch, navigate}) {
-    const {id} = useParams();
-    const {pathname} = useLocation();
+function ProductInfor({ dispatch, navigate }) {
+    const { id } = useParams();
+    const { pathname } = useLocation();
     const [data, setData] = useState(null);
     const [activeImage, setActiveImage] = useState(null);
     const [activeQuantity, setActiveQuantity] = useState(null);
-    const {data: listData} = useSelector((state) => state.products);
-    const {user} = useSelector((state) => state.user);
+    const { data: listData } = useSelector((state) => state.products);
+    const { user } = useSelector((state) => state.user);
     const [limitComment, setLimitComment] = useState(4);
     const [isComment, setIsComment] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
+    const [editReviewId, setEditReviewId] = useState(null);
     const [dataComment, setDataComment] = useState({
         rating: 0,
         comment: "",
     });
+
     const fetchData = async () => {
         try {
             const res = await getProductId(id);
@@ -39,7 +42,7 @@ function ProductInfor({dispatch, navigate}) {
                 setData(res?.product);
             }
         } catch (err) {
-            console.log(err.reponse);
+            console.log(err.response);
         }
     };
 
@@ -97,9 +100,11 @@ function ProductInfor({dispatch, navigate}) {
     const handleSeeMore = () => {
         setLimitComment(data?.reviews?.length);
     };
+
     const handleStarClick = (starValue) => {
-        setDataComment({...dataComment, rating: starValue});
+        setDataComment({ ...dataComment, rating: starValue });
     };
+
     const handleComment = async () => {
         try {
             if (!user) {
@@ -114,10 +119,17 @@ function ProductInfor({dispatch, navigate}) {
                     }
                 });
             } else {
-                const res = await createReview(data?._id, dataComment);
+                let res;
+                if (isEditing) {
+                    res = await updateReview(id, editReviewId, dataComment);
+                } else {
+                    res = await createReview(id, dataComment);
+                }
 
                 if (res?.success) {
                     setIsComment(false);
+                    setIsEditing(false);
+                    setEditReviewId(null);
                     fetchData();
                 } else {
                     Swal.fire({
@@ -134,6 +146,53 @@ function ProductInfor({dispatch, navigate}) {
         }
     };
 
+    const handleEditComment = (review) => {
+        setDataComment({
+            rating: review.rating,
+            comment: review.comment,
+        });
+        setEditReviewId(review._id);
+        setIsEditing(true);
+        setIsComment(true);
+    };
+
+    const handleDeleteComment = async (reviewId) => {
+        Swal.fire({
+            title: 'Bạn có chắc chắn muốn xóa bình luận này không?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Xóa',
+            cancelButtonText: 'Hủy'
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const res = await deleteReview(id, reviewId);
+
+                    if (res?.success) {
+                        fetchData();
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thành công!',
+                            text: 'Bình luận đã được xóa!',
+                            confirmButtonText: 'Đóng'
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Thất bại!',
+                            text: res.message,
+                            confirmButtonText: 'Đóng'
+                        });
+                    }
+                } catch (e) {
+                    toast.warning(e?.response?.data?.message);
+                }
+            }
+        });
+    };
+
     useEffect(() => {
         fetchData();
     }, [id]);
@@ -144,7 +203,7 @@ function ProductInfor({dispatch, navigate}) {
                 <div className="content-product-info">
                     <div className="productInfor--box">
                         <div className="productInfor--box--left">
-                            <img src={activeImage || data?.image[0]?.url} alt=""/>
+                            <img src={activeImage || data?.image[0]?.url} alt="" />
                             <div className="productInfor--box--left--listImg">
                                 {data?.image?.slice(0, 3)?.map((item) => {
                                     return (
@@ -154,7 +213,7 @@ function ProductInfor({dispatch, navigate}) {
                                                 setActiveImage(item?.url);
                                             }}
                                         >
-                                            <img key={item?._id} src={item.url} alt=""/>
+                                            <img key={item?._id} src={item.url} alt="" />
                                         </div>
                                     );
                                 })}
@@ -178,13 +237,13 @@ function ProductInfor({dispatch, navigate}) {
                                     </p>
                                 )}
                             </div>
-                            {<Rating star={Number(data?.ratings) || 5} size={20}/>}
+                            {<Rating star={Number(data?.ratings) || 5} size={20} />}
                             <div className="productInfor--box--right--color">
                                 <span>
                                     <p>Màu</p>
                                     <p>{activeQuantity?.color || data?.color[0]?.color}</p>
                                 </span>
-                                <div style={{display: "flex"}}>
+                                <div style={{ display: "flex" }}>
                                     {data?.color.map((item) => (
                                         <div key={item?._id} onClick={() => handleSelectColor(item)}>
                                             <div
@@ -207,9 +266,9 @@ function ProductInfor({dispatch, navigate}) {
                                 </span>
                             </div>
                             <div className="productInfor--box--right--des">
-                                <div style={{padding: "10px"}} dangerouslySetInnerHTML={{__html: data?.des}}/>
+                                <div style={{ padding: "10px" }} dangerouslySetInnerHTML={{ __html: data?.des }} />
                             </div>
-                            <div style={{backgroundColor: "transparent"}} className="btn">
+                            <div style={{ backgroundColor: "transparent" }} className="btn">
                                 <button
                                     disabled={activeQuantity?.quantity === 0}
                                     onClick={handleAddCard}
@@ -227,7 +286,7 @@ function ProductInfor({dispatch, navigate}) {
                         <h2>Sản phẩm tương tự</h2>
                         <div className="suggest--list">
                             {listSuggest?.map((el) => {
-                                return <CardProductCbn data={el}/>;
+                                return <CardProductCbn data={el} />;
                             })}
                         </div>
                     </div>
@@ -249,25 +308,29 @@ function ProductInfor({dispatch, navigate}) {
                                         : 5}
                                 </h2>
 
-                                <Rating star={Number(data?.ratings) || 5} size={20}/>
+                                <Rating star={Number(data?.ratings) || 5} size={20} />
                                 <p>Có {data?.reviews?.length} đánh giá</p>
                             </div>
                         </div>
                         {data?.reviews?.length > 0 && (
                             <div className="comment--box--list">
-                                {data?.reviews?.slice(0, limitComment)?.map((item) => {
-                                    return (
-                                        <div className="comment--box--list--box" key={item?._id}>
-                                            <div className="comment--box--list--box--user">
-                                                <img src={item?.user?.profilePicture} alt="User Profile"/>
-                                                <h3>{item?.user.name}</h3>
-                                            </div>
-                                            <Rating star={item.rating}/>
-                                            <p>{item?.comment}</p>
-                                            <p>{moment(item?.createAt).fromNow()}</p>
+                                {data?.reviews?.slice(0, limitComment)?.map((item) => (
+                                    <div className="comment--box--list--box" key={item?._id}>
+                                        <div className="comment--box--list--box--user">
+                                            <img src={item?.user?.profilePicture} alt="User Profile" />
+                                            <h3>{item?.user.name}</h3>
                                         </div>
-                                    );
-                                })}
+                                        <Rating star={item.rating} />
+                                        <p>{item?.comment}</p>
+                                        <p>{moment(item?.createAt).fromNow()}</p>
+                                        {item?.user._id === user?._id && (
+                                            <button className="edit-button" onClick={() => handleEditComment(item)}>Chỉnh sửa</button>
+                                        )}
+                                        {user?.role === "Admin" && (
+                                            <button className="delete-button" onClick={() => handleDeleteComment(item._id)}>Xóa</button>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         )}
                         <div className="comment--box--bottom">
@@ -290,12 +353,16 @@ function ProductInfor({dispatch, navigate}) {
                 <ModalCpn isOpen={isComment}>
                     <div className="Modal">
                         <div className="Modal--title">
-                            <h3>Đánh giá sản phẩm</h3>
+                            <h3>{isEditing ? "Chỉnh sửa đánh giá" : "Đánh giá sản phẩm"}</h3>
                             <div
                                 className="Modal--title--button"
-                                onClick={() => setIsComment(false)}
+                                onClick={() => {
+                                    setIsComment(false);
+                                    setIsEditing(false);
+                                    setEditReviewId(null);
+                                }}
                             >
-                                <IoMdClose size={24}/>;
+                                <IoMdClose size={24} />
                             </div>
                         </div>
                         <div className="Modal--content">
@@ -304,29 +371,23 @@ function ProductInfor({dispatch, navigate}) {
                                     <span
                                         key={starValue}
                                         onClick={() => handleStarClick(starValue)}
-                                        style={{cursor: "pointer"}}
+                                        style={{ cursor: "pointer" }}
                                     >
-                    {starValue <= dataComment.rating ? (
-                        <IoStar
-                            style={{paddingRight: "8px"}}
-                            color="#FF9921"
-                            size={30}
-                        />
-                    ) : (
-                        <IoStarOutline
-                            style={{paddingRight: "8px"}}
-                            size={30}
-                        />
-                    )}
-                  </span>
+                                        {starValue <= dataComment.rating ? (
+                                            <IoStar style={{ paddingRight: "8px" }} color="#FF9921" size={30} />
+                                        ) : (
+                                            <IoStarOutline style={{ paddingRight: "8px" }} size={30} />
+                                        )}
+                                    </span>
                                 ))}
                             </div>
                             <textarea
                                 className="Modal--content--input"
                                 placeholder="Mời bạn chia sẻ thêm cảm nhận..."
                                 rows={8}
+                                value={dataComment.comment}
                                 onChange={(e) =>
-                                    setDataComment({...dataComment, comment: e.target.value})
+                                    setDataComment({ ...dataComment, comment: e.target.value })
                                 }
                             />
                         </div>
@@ -335,7 +396,7 @@ function ProductInfor({dispatch, navigate}) {
                             onClick={handleComment}
                             className="Modal--submit"
                         >
-                            Gửi đánh giá
+                            {isEditing ? "Cập nhật đánh giá" : "Gửi đánh giá"}
                         </button>
                     </div>
                 </ModalCpn>

@@ -122,6 +122,27 @@ const createReviews = async (req, res) => {
     }
 };
 
+const updateReview = async (req, res) => {
+    try {
+        const { productId, reviewId } = req.params;
+        const response = await ProductService.updateReview(productId, reviewId, req.body);
+        res.status(200).json(response);
+    } catch (e) {
+        res.status(500).json({ success: false, message: e.message });
+    }
+};
+
+const deleteReview = async (req, res) => {
+    try {
+        const { productId, reviewId } = req.params;
+        const response = await ProductService.deleteReview(productId, reviewId);
+        res.status(200).json(response);
+    } catch (e) {
+        res.status(500).json({ success: false, message: e.message });
+    }
+};
+
+
 module.exports = {
     createProduct,
     getProducts,
@@ -129,4 +150,6 @@ module.exports = {
     deleteProduct,
     updateProduct,
     createReviews,
+    updateReview,
+    deleteReview
 };

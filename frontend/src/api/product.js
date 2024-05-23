@@ -67,3 +67,13 @@ export const createReview = async (id, data) => {
     const res = await axios.post(`/product/create-reviews/${id}`, data);
     return res.data;
 };
+
+export const updateReview = async (productId, reviewId, data) => {
+    const res = await axios.put(`/product/update-review/${productId}/${reviewId}`, data);
+    return res.data;
+};
+
+export const deleteReview = async (productId, reviewId) => {
+    const res = await axios.delete(`/product/delete-review/${productId}/${reviewId}`);
+    return res.data;
+};
