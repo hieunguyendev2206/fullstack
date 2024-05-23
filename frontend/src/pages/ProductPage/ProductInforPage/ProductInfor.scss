@@ -38,44 +38,44 @@
         }
         &--right{
             text-align: left;
-           &--price{
-            display: flex;
-            font-size: 16px;
-            &--price {
-                color: #ccc;
-                text-decoration: line-through;
-                font-weight: 400;
-                margin: 4px 0;
-                padding-right:6px ;
-            }
-            &--sale{
-                color: #ff9921;
-                font-weight: 600;
-                margin: 4px 0;
-            }
-           }
-           &--color{
-            margin-top: 4%;
-            span{
-                display: flex;
-
-                align-items: center;
-            }
-            span{
+            &--price{
                 display: flex;
                 font-size: 16px;
-                font-weight: 500;
-                p{
-                    padding-left: 4px;
+                &--price {
+                    color: #ccc;
+                    text-decoration: line-through;
+                    font-weight: 400;
+                    margin: 4px 0;
+                    padding-right:6px ;
+                }
+                &--sale{
+                    color: #ff9921;
+                    font-weight: 600;
+                    margin: 4px 0;
                 }
             }
-           }
-           &--des{
-            width: 100%;
-            border-radius: 8px;
-            background-color: #2F3033;
-            padding: 8px 0;
-           }
+            &--color{
+                margin-top: 4%;
+                span{
+                    display: flex;
+
+                    align-items: center;
+                }
+                span{
+                    display: flex;
+                    font-size: 16px;
+                    font-weight: 500;
+                    p{
+                        padding-left: 4px;
+                    }
+                }
+            }
+            &--des{
+                width: 100%;
+                border-radius: 8px;
+                background-color: #2F3033;
+                padding: 8px 0;
+            }
         }
         .btn{
             width: 100%;
@@ -113,6 +113,19 @@
 
     }
 }
+.comment--box--list--box--user {
+    display: flex;
+    align-items: center;
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    h3 {
+        margin: 0;
+    }
+}
 
 .comment{
     width: 100%;
@@ -125,7 +138,7 @@
         border: 1px solid #ccc;
         border-radius: 4px;
         &--title{
-           margin-left: 20px;
+            margin-left: 20px;
             width: 100%;
             display: flex;
             justify-content: start;
@@ -153,14 +166,14 @@
         &--list{
             text-align: left;
             &--box{
-               margin: 0 20px;
-           h3{
-            margin: 0;
-           }
-           p{
-            margin-top: 4px;
-           }
-           }
+                margin: 0 20px;
+                h3{
+                    margin: 0;
+                }
+                p{
+                    margin-top: 4px;
+                }
+            }
         }
         &--bottom{
             display: flex;
@@ -181,7 +194,7 @@
                     border: 1px solid white;
                     color: white;
                     background-color: #3E3E3F;
-                  }
+                }
                 &:disabled{
                     background-color: white;
                     cursor: default;
@@ -203,10 +216,10 @@
                 outline: none;
                 color: white;
                 &:hover{
-                border: 1px solid #0071E3;
-                color: black;
-                background-color: white;
-              }
+                    border: 1px solid #0071E3;
+                    color: black;
+                    background-color: white;
+                }
             }
         }
     }
@@ -257,15 +270,15 @@
         outline: none;
         color: white;
         &:hover{
-        border: 1px solid #0071E3;
-        color: black;
-        background-color: white;
-        &:disabled{
-            cursor: default;
-            background-color: #0071E3;
-            color: white;
-        }
-    }}
+            border: 1px solid #0071E3;
+            color: black;
+            background-color: white;
+            &:disabled{
+                cursor: default;
+                background-color: #0071E3;
+                color: white;
+            }
+        }}
 }
 
 @media screen and (max-width: 2560px){
@@ -357,24 +370,24 @@
 @media screen and (max-width: 480px) {
     .productInfor{
         &--box{
-           display: block;
-           &--right{
-            box-sizing: border-box;
-            padding-left: 12px;
-            padding-right: 12px;
-            &--des{
+            display: block;
+            &--right{
                 box-sizing: border-box;
                 padding-left: 12px;
                 padding-right: 12px;
+                &--des{
+                    box-sizing: border-box;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
             }
-           }
-           &--left{
-            &--listImg{
-                box-sizing: border-box;
-                padding-left: 12px;
-                padding-right: 12px;
+            &--left{
+                &--listImg{
+                    box-sizing: border-box;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
             }
-           }
         }
     }
 
@@ -394,4 +407,4 @@
         padding-right: 12px;
         overflow: hidden;
     }
-  }
+}

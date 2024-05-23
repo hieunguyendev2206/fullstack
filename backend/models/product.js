@@ -26,19 +26,10 @@ const productSchema = new mongoose.Schema({
     ],
     reviews: [
         {
-            user: {
-                type: Object,
-            },
-            rating: {
-                type: Number,
-            },
-            comment: {
-                type: String,
-            },
-            createAt: {
-                type: Date,
-                default: Date.now,
-            },
+            user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+            rating: { type: Number },
+            comment: { type: String },
+            createAt: { type: Date, default: Date.now },
         },
     ],
     sold_out: {

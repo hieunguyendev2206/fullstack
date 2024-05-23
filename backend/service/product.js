@@ -105,7 +105,12 @@ const getProducts = (options) => {
 const getProduct = (id) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const product = await Product.findById(id).populate("category");
+            const product = await Product.findById(id)
+                .populate({
+                    path: 'reviews.user',
+                    select: 'name profilePicture',
+                })
+                .populate("category");
             if (product) {
                 resolve({
                     success: true,
@@ -193,8 +198,8 @@ const updateProduct = (id, data) => {
 const createReviews = (productId, data, userId) => {
     return new Promise(async (resolve, reject) => {
         try {
-            const {comment, rating} = data;
-            const user = await User.findById(userId).select("name");
+            const { comment, rating } = data;
+            const user = await User.findById(userId).select("name profilePicture");
             const product = await Product.findById(productId);
             if (!product) {
                 reject({
@@ -220,7 +225,7 @@ const createReviews = (productId, data, userId) => {
                 return;
             }
             product.reviews.unshift({
-                user: user,
+                user: user._id,
                 rating: rating,
                 comment: comment,
             });
@@ -236,6 +241,8 @@ const createReviews = (productId, data, userId) => {
         }
     });
 };
+
+
 
 module.exports = {
     createProduct,

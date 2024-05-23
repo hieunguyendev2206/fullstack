@@ -248,8 +248,11 @@ function ProductInfor({dispatch, navigate}) {
                             <div className="comment--box--list">
                                 {data?.reviews?.slice(0, limitComment)?.map((item) => {
                                     return (
-                                        <div className="comment--box--list--box">
-                                            <h3>{item?.user.name}</h3>
+                                        <div className="comment--box--list--box" key={item?._id}>
+                                            <div className="comment--box--list--box--user">
+                                                <img src={item?.user?.profilePicture} alt="User Profile"/>
+                                                <h3>{item?.user.name}</h3>
+                                            </div>
                                             <Rating star={item.rating}/>
                                             <p>{item?.comment}</p>
                                             <p>{moment(item?.createAt).fromNow()}</p>
