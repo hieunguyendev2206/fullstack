@@ -113,18 +113,27 @@ function ProductInfor({dispatch, navigate}) {
                         navigate("/auth");
                     }
                 });
-            }
-            const res = await createReview(data?._id, dataComment);
+            } else {
+                const res = await createReview(data?._id, dataComment);
 
-            if (res?.success) {
-                setIsComment(false);
-                fetchData();
+                if (res?.success) {
+                    setIsComment(false);
+                    fetchData();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Thất bại!',
+                        text: res.message,
+                        confirmButtonText: 'Đóng'
+                    });
+                }
             }
         } catch (e) {
             setIsComment(false);
             toast.warning(e?.response?.data?.message);
         }
     };
+
     useEffect(() => {
         fetchData();
     }, [id]);

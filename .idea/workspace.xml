@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="change package.json v4">
-      <change afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/0.pack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/node_modules/.cache/default-development/index.pack" afterDir="false" />
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="add pictureUserRating">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/service/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/service/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProductPage/ProductInforPage/ProductInfor.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,29 +36,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.backend/Dockerfile.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Document_NTTU/Semester_8_2023-2024/In-depth software technology topics 2/DoAn/FullStack/frontend/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.client.executor": "Run",
-    "npm.server.executor": "Run",
-    "npm.start (1).executor": "Run",
-    "npm.start.executor": "Run",
-    "npm.test.executor": "Run",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "ts.external.directory.path": "D:\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.backend/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Github/FullStack&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.client.executor&quot;: &quot;Run&quot;,
+    &quot;npm.server.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\FullStack\frontend\src\styles\image" />
       <recent name="E:\Document_NTTU\Semester_8_2023-2024\In-depth software technology topics 2\DoAn\FullStack\frontend\public" />
     </key>
   </component>
@@ -164,6 +167,20 @@
       <workItem from="1715702472878" duration="14510000" />
       <workItem from="1715737124401" duration="12936000" />
       <workItem from="1715772624700" duration="3928000" />
+      <workItem from="1715777891712" duration="4038000" />
+      <workItem from="1715792862297" duration="836000" />
+      <workItem from="1715827826603" duration="1057000" />
+      <workItem from="1715920727925" duration="166000" />
+      <workItem from="1715921686526" duration="59000" />
+      <workItem from="1716005766942" duration="63000" />
+      <workItem from="1716016822375" duration="401000" />
+      <workItem from="1716175922770" duration="34000" />
+      <workItem from="1716180794149" duration="64000" />
+      <workItem from="1716180935027" duration="296000" />
+      <workItem from="1716181424570" duration="661000" />
+      <workItem from="1716320663526" duration="569000" />
+      <workItem from="1716429256194" duration="170000" />
+      <workItem from="1716430662217" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="change .env">
       <option name="closed" value="true" />
@@ -197,7 +214,111 @@
       <option name="project" value="LOCAL" />
       <updated>1715252050392</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change api url service">
+      <option name="closed" value="true" />
+      <created>1715778593149</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715778593150</updated>
+    </task>
+    <task id="LOCAL-00006" summary="change api header-admin">
+      <option name="closed" value="true" />
+      <created>1715793016745</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715793016745</updated>
+    </task>
+    <task id="LOCAL-00007" summary="change api header-admin">
+      <option name="closed" value="true" />
+      <created>1715793429478</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715793429478</updated>
+    </task>
+    <task id="LOCAL-00008" summary="change size image">
+      <option name="closed" value="true" />
+      <created>1715921724449</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715921724449</updated>
+    </task>
+    <task id="LOCAL-00009" summary="change orderPage">
+      <option name="closed" value="true" />
+      <created>1716005816987</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716005816987</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change name of user">
+      <option name="closed" value="true" />
+      <created>1716175948014</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716175948014</updated>
+    </task>
+    <task id="LOCAL-00011" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716180841843</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716180841843</updated>
+    </task>
+    <task id="LOCAL-00012" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716181049111</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1716181049111</updated>
+    </task>
+    <task id="LOCAL-00013" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716181188600</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716181188600</updated>
+    </task>
+    <task id="LOCAL-00014" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716181454928</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716181454928</updated>
+    </task>
+    <task id="LOCAL-00015" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716320817600</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716320817600</updated>
+    </task>
+    <task id="LOCAL-00016" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716321009069</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716321009069</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add pictureUserRating">
+      <option name="closed" value="true" />
+      <created>1716429415639</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716429415639</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +343,13 @@
     <MESSAGE value="change .env" />
     <MESSAGE value="change package.json" />
     <MESSAGE value="change package.json v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="change package.json v4" />
+    <MESSAGE value="change api url service" />
+    <MESSAGE value="change api header-admin" />
+    <MESSAGE value="change size image" />
+    <MESSAGE value="change orderPage" />
+    <MESSAGE value="change name of user" />
+    <MESSAGE value="all commit complete" />
+    <MESSAGE value="add pictureUserRating" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pictureUserRating" />
   </component>
 </project>

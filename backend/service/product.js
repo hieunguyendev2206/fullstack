@@ -204,26 +204,38 @@ const createReviews = (productId, data, userId) => {
             if (!product) {
                 reject({
                     success: false,
-                    message: "Không tìm thấy sản phẩm !",
+                    message: "Không tìm thấy sản phẩm!",
                 });
                 return;
             }
+
+            // Kiểm tra xem người dùng đã bình luận chưa
+            const hasReviewed = product.reviews.some(review => review.user.toString() === userId);
+            if (hasReviewed) {
+                reject({
+                    success: false,
+                    message: "Bạn đã bình luận về sản phẩm này rồi!",
+                });
+                return;
+            }
+
             const orders = await Order.find({
                 user: userId,
                 status: "Đã giao",
             }).populate("products.product");
-            const checkOrder = orders.some((order) =>
-                order.products.some((orderProduct) =>
+            const checkOrder = orders.some(order =>
+                order.products.some(orderProduct =>
                     orderProduct.product.equals(product._id)
                 )
             );
             if (!checkOrder) {
                 reject({
                     success: false,
-                    message: "Bạn chưa mua sản phẩm này !",
+                    message: "Bạn chưa mua sản phẩm này!",
                 });
                 return;
             }
+
             product.reviews.unshift({
                 user: user._id,
                 rating: rating,
@@ -241,7 +253,6 @@ const createReviews = (productId, data, userId) => {
         }
     });
 };
-
 
 
 module.exports = {
