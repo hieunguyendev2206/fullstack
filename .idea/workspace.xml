@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="Add feature to edit and delete comments (for admin)" />
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="all commit complete">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,6 +180,7 @@
       <workItem from="1716429256194" duration="170000" />
       <workItem from="1716430662217" duration="70000" />
       <workItem from="1716435061163" duration="123000" />
+      <workItem from="1716456470426" duration="1636000" />
     </task>
     <task id="LOCAL-00001" summary="change .env">
       <option name="closed" value="true" />
@@ -331,7 +334,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716435167517</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716456500881</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716456500881</updated>
+    </task>
+    <task id="LOCAL-00021" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716457591261</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716457591261</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,10 +380,10 @@
     <MESSAGE value="change size image" />
     <MESSAGE value="change orderPage" />
     <MESSAGE value="change name of user" />
-    <MESSAGE value="all commit complete" />
     <MESSAGE value="add pictureUserRating" />
     <MESSAGE value="added comment user limit" />
     <MESSAGE value="Add feature to edit and delete comments (for admin)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add feature to edit and delete comments (for admin)" />
+    <MESSAGE value="all commit complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="all commit complete" />
   </component>
 </project>
