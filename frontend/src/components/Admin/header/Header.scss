@@ -1,0 +1,46 @@
+.header-ad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #101010;
+    color: white;
+
+    &--left {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .right--image {
+            width: 32px;
+            height: 32px;
+            margin-left: 10px;
+        }
+    }
+
+    &--right {
+        display: flex;
+        align-items: center;
+
+        &--image {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+
+            .user-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+
+            svg {
+                color: white;
+            }
+        }
+
+        p {
+            margin: 0;
+            font-weight: 600;
+        }
+    }
+}
