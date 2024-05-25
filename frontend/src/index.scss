@@ -260,7 +260,7 @@ button {
   }
   .content-product {
     width: 100%;
-    margin: 0 20px;
+    margin: 0;
     background-origin: border-box;
   }
 
@@ -282,7 +282,7 @@ button {
   }
   .content-header {
     width: 100%;
-    padding: 10px;
+    padding: 0;
     background-origin: border-box;
   }
   .content-banner {
@@ -439,7 +439,7 @@ button {
   }
   .content-header {
     width: 100%;
-    padding: 0;
+    padding: 0 5px;
     background-origin: border-box;
   }
   .content-order-history {
