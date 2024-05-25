@@ -18,6 +18,8 @@ import Order from "./pages/OrderPage/Order.jsx";
 import BlogInfor from "./pages/Blog/BlogInfor/BlogInfor.jsx";
 import BlogPage from "./pages/Blog/BlogPage/BlogPage.jsx";
 import VerifyEmailPage from "./pages/Auth/VerifyEmailPage";
+import ForgotPasswordPage from "./pages/Auth/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/Auth/ResetPasswordPage";
 
 function App() {
     const {user} = useSelector((state) => state.user);
@@ -53,13 +55,32 @@ function App() {
                             </Layout>
                         }
                     />
-                    <Route path="/auth" element={<Auth/>}/>
+                    <Route path="/auth"
+                           element={
+
+                               <Auth/>
+                           }
+                    />
+                    <Route path="/forgot-password"
+                           element={
+                               <Layout>
+                                   <ForgotPasswordPage/>
+                               </Layout>
+                           }
+                    />
+                    <Route path="/reset-password"
+                           element={
+                               <Layout>
+                                   <ResetPasswordPage/>
+                               </Layout>
+                           }
+                    />
                     <Route
                         path="/verify-email"
                         element={
                             <Layout>
                                 <div className="content-verified-email">
-                                    <VerifyEmailPage />
+                                    <VerifyEmailPage/>
                                 </div>
                             </Layout>
                         }

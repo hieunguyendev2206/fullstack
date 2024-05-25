@@ -10,6 +10,25 @@ export const register = async (data) => {
     return res.data;
 };
 
+export const forgotPassword = async (data) => {
+    const res = await axios.post("/user/forgot-password", data);
+    return res.data;
+};
+
+export const resetPassword = async (token, data) => {
+    const res = await axios.post(`/user/reset-password/${token}`, data);
+    return res.data;
+};
+
+export const verifyResetToken = async (token) => {
+    try {
+        const res = await axios.get(`/user/verify-reset-token/${token}`);
+        return res.data;
+    } catch (error) {
+        throw error.response.data;
+    }
+};
+
 export const verifyEmail = async (token) => {
     const res = await axios.get(`/user/verify-email?token=${token}`);
     return res.data;

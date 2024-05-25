@@ -110,6 +110,7 @@ function Auth({navigate}) {
                         </form>
                         <p onClick={() => setForm(2)}>Bạn chưa có tài khoản?</p>
                         <p onClick={() => navigate("/")}>Trang chủ</p>
+                        <p onClick={() => navigate("/forgot-password")}>Quên mật khẩu?</p>
                     </div>
                 )}
                 {form === 2 && (

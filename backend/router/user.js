@@ -9,6 +9,9 @@ const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
 
 
+router.post("/forgot-password", userController.forgotPassword);
+router.post("/reset-password/:token", userController.resetPassword);
+router.get("/verify-reset-token/:token", userController.verifyResetToken);
 router.post('/:id/uploadProfilePicture', upload.single('profilePicture'), userController.uploadProfilePicture);
 router.post('/:id/uploadCoverPicture', upload.single('coverPicture'), userController.uploadCoverPicture); // Thêm route cho upload ảnh bìa
 

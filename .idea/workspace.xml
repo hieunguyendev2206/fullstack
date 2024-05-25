@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="all commit complete">
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="change display price sale">
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ForgotPasswordPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ResetPasswordPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/card/cardProduct/Card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card/cardProduct/Card.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/card/cardProduct/CardProductCbn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/card/cardProduct/CardProductCbn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/router/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/router/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,30 +43,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.backend/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Github/FullStack&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.client.executor&quot;: &quot;Run&quot;,
-    &quot;npm.server.executor&quot;: &quot;Run&quot;,
-    &quot;npm.start (1).executor&quot;: &quot;Run&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;npm.test.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.backend/Dockerfile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/Github/FullStack/frontend/src/pages/Auth",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.client.executor": "Run",
+    "npm.server.executor": "Run",
+    "npm.start (1).executor": "Run",
+    "npm.start.executor": "Run",
+    "npm.test.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "D:\\JetBrains\\WebStorm 2023.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Github\FullStack\frontend\src\pages\Auth" />
       <recent name="E:\Github\FullStack\frontend\src\styles\image" />
       <recent name="E:\Document_NTTU\Semester_8_2023-2024\In-depth software technology topics 2\DoAn\FullStack\frontend\public" />
     </key>
@@ -185,7 +193,8 @@
       <workItem from="1716456470426" duration="1636000" />
       <workItem from="1716458902000" duration="40000" />
       <workItem from="1716458959131" duration="1362000" />
-      <workItem from="1716525736676" duration="13000" />
+      <workItem from="1716525736676" duration="46000" />
+      <workItem from="1716599178216" duration="166000" />
     </task>
     <task id="LOCAL-00001" summary="change .env">
       <option name="closed" value="true" />
@@ -395,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716460323167</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="change display price sale">
+      <option name="closed" value="true" />
+      <created>1716525776966</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716525776966</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,6 +446,7 @@
     <MESSAGE value="added comment user limit" />
     <MESSAGE value="Add feature to edit and delete comments (for admin)" />
     <MESSAGE value="all commit complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="all commit complete" />
+    <MESSAGE value="change display price sale" />
+    <option name="LAST_COMMIT_MESSAGE" value="change display price sale" />
   </component>
 </project>

@@ -18,6 +18,8 @@ const userSchema = new mongoose.Schema({
     profilePicture: { type: String },
     coverPicture: { type: String }, // Thêm trường ảnh bìa
     verificationExpires: { type: Date, required: false, default: null },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
 });
 
 module.exports = mongoose.model('User', userSchema);

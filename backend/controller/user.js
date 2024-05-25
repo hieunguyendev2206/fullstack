@@ -2,6 +2,10 @@ const User = require('../models/user');
 const UserService = require("../service/user");
 const cloudinary = require('cloudinary').v2;
 const cloudinaryConnect = require('../config/cloudinaryConnect')
+const crypto = require('crypto');
+const { sendEmail } = require('../utils/mailer');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({storage: storage});
@@ -88,6 +92,88 @@ const register = async (req, res) => {
         return res.status(500).json({
             mes: e.mes,
         });
+    }
+};
+
+const forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ success: false, mes: 'Email không tồn tại!' });
+        }
+
+        const resetToken = crypto.randomBytes(32).toString('hex');
+        user.resetPasswordToken = resetToken;
+        user.resetPasswordExpires = Date.now() + 60 * 1000; // 1 phút
+        await user.save();
+
+        const resetUrl = `${process.env.RESET_PASSWORD_URL}${resetToken}`;
+        const emailOptions = {
+            from: 'autofeedback003@gmail.com',
+            to: email,
+            subject: 'Yêu cầu thay đổi mật khẩu',
+            html: `<strong>Xin chào</strong>,<br>Vui lòng nhấn vào <a href="${resetUrl}">đây</a> để thay đổi mật khẩu của bạn.`,
+        };
+
+        await sendEmail(emailOptions);
+
+        return res.status(200).json({
+            success: true,
+            mes: 'Email yêu cầu thay đổi mật khẩu đã được gửi!',
+        });
+    } catch (error) {
+        return res.status(500).json({ mes: error.message });
+    }
+};
+
+const resetPassword = async (req, res) => {
+    try {
+        const { token } = req.params;
+        const { password } = req.body;
+
+        // Tìm người dùng dựa trên token và kiểm tra thời hạn của token
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpires: { $gt: Date.now() }, // Kiểm tra thời hạn của token
+        });
+
+        if (!user) {
+            // Nếu không tìm thấy người dùng hoặc token đã hết hạn
+            return res.status(400).json({ success: false, mes: 'Liên kết đã hết hạn hoặc không hợp lệ!' });
+        }
+
+        // Mã hóa mật khẩu mới
+        user.password = await bcrypt.hash(password, 10);
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+        await user.save();
+
+        return res.status(200).json({ success: true, mes: 'Mật khẩu đã thay đổi thành công!' });
+    } catch (error) {
+        return res.status(500).json({ mes: error.message });
+    }
+};
+
+const verifyResetToken = async (req, res) => {
+    try {
+        const { token } = req.params;
+
+        // Tìm người dùng dựa trên token và kiểm tra thời hạn của token
+        const user = await User.findOne({
+            resetPasswordToken: token,
+            resetPasswordExpires: { $gt: Date.now() },
+        });
+
+        if (!user) {
+            // Nếu không tìm thấy người dùng hoặc token đã hết hạn
+            return res.status(400).json({ success: false, mes: 'Liên kết đã hết hạn hoặc không hợp lệ!' });
+        }
+
+        return res.status(200).json({ success: true, mes: 'Liên kết hợp lệ.' });
+    } catch (error) {
+        return res.status(500).json({ mes: error.message });
     }
 };
 
@@ -265,6 +351,9 @@ const removeProductCart = async (req, res) => {
 
 module.exports = {
     register,
+    forgotPassword,
+    resetPassword,
+    verifyResetToken,
     verifyEmail,
     login,
     getUsers,
