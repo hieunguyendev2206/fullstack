@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="change display price sale">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ForgotPasswordPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/ResetPasswordPage.jsx" afterDir="false" />
+    <list default="true" id="2c2101c1-f596-47c2-b250-323cf0767e72" name="Changes" comment="all commit complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controller/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/router/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/router/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Auth/Auth.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/Github/FullStack/frontend/src/pages/Auth",
+    "last_opened_file_path": "E:/Github/FullStack",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -194,7 +187,8 @@
       <workItem from="1716458902000" duration="40000" />
       <workItem from="1716458959131" duration="1362000" />
       <workItem from="1716525736676" duration="46000" />
-      <workItem from="1716599178216" duration="166000" />
+      <workItem from="1716599178216" duration="716000" />
+      <workItem from="1716599941161" duration="1216000" />
     </task>
     <task id="LOCAL-00001" summary="change .env">
       <option name="closed" value="true" />
@@ -412,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716525776966</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="all commit complete">
+      <option name="closed" value="true" />
+      <created>1716599391812</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1716599391812</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,8 +447,8 @@
     <MESSAGE value="add pictureUserRating" />
     <MESSAGE value="added comment user limit" />
     <MESSAGE value="Add feature to edit and delete comments (for admin)" />
-    <MESSAGE value="all commit complete" />
     <MESSAGE value="change display price sale" />
-    <option name="LAST_COMMIT_MESSAGE" value="change display price sale" />
+    <MESSAGE value="all commit complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="all commit complete" />
   </component>
 </project>
