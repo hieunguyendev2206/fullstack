@@ -27,7 +27,7 @@ function ProductPage() {
     const nameCategory = data?.filter((el) => el?._id === category);
     return (
         <div className="product">
-            <div className="content">
+            <div className="content-product">
                 <div className="product--name">
                     <img src={Logo} className="right--image" alt=""/>
                     <h1>{nameCategory[0]?.name}</h1>
