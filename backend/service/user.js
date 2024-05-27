@@ -221,6 +221,30 @@ const getUsers = (options) => {
     });
 };
 
+const getUserById = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const user = await User.findById(id).select("-password");
+            if (!user) {
+                reject({
+                    success: false,
+                    message: "User not found"
+                });
+                return;
+            }
+            resolve({
+                success: true,
+                user
+            });
+        } catch (error) {
+            reject({
+                success: false,
+                message: "Server error"
+            });
+        }
+    });
+};
+
 const refreshToken = (id, role) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -383,6 +407,7 @@ module.exports = {
     verifyEmail,
     login,
     getUsers,
+    getUserById,
     getUserToken,
     refreshToken,
     deleteUser,

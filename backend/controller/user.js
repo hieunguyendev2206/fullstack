@@ -254,6 +254,18 @@ const getUsers = async (req, res) => {
     }
 };
 
+const getUserById = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).select("-password");
+        if (!user) {
+            return res.status(404).json({ success: false, message: "User not found" });
+        }
+        res.status(200).json({ success: true, user });
+    } catch (error) {
+        res.status(500).json({ success: false, message: "Server error" });
+    }
+};
+
 const refreshToken = async (req, res) => {
     try {
         const {id, role} = req.user;
@@ -357,6 +369,7 @@ module.exports = {
     verifyEmail,
     login,
     getUsers,
+    getUserById,
     getUserToken,
     refreshToken,
     addProductCart,

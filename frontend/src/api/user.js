@@ -95,3 +95,13 @@ export const uploadUserCoverPicture = async (userId, file) => {
         },
     });
 };
+
+export const getUserById = async (id) => {
+    try {
+        const res = await axios.get(`/user/get-user-id/${id}`);
+        return res.data;
+    } catch (error) {
+        console.error("Error fetching user data:", error);
+        throw error;
+    }
+};

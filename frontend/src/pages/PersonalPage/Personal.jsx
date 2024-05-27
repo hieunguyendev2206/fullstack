@@ -7,10 +7,8 @@ import { toast } from 'react-toastify';
 import { updateUser, uploadUserProfilePicture, uploadUserCoverPicture } from '../../api/user';
 import { getUser } from '../../redux/slice/userSlice';
 import { useDropzone } from 'react-dropzone';
-
-// Import default cover picture
 import defaultCoverPicture from '../../styles/image/default-cover.png';
-import defaultProfilePicture from '../../styles/image/default-user.webp'; // Nếu có ảnh đại diện mặc định
+import defaultProfilePicture from '../../styles/image/default-user.webp';
 
 function Personal({ navigate }) {
     const { user } = useSelector((state) => state.user);

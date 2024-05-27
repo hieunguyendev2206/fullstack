@@ -1,0 +1,198 @@
+.personal {
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+
+  .cover-container {
+    width: 100%;
+    max-width: 800px;
+    height: 250px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.7;
+
+    .cover-picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  .content-personal {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+    position: relative;
+  }
+
+  &--box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &--top {
+      margin-bottom: 20px;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+
+      .profile-picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: darkgray;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        border: 4px solid white;
+      }
+    }
+
+    &--bottom {
+      width: 100%;
+
+      span {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+
+        label {
+          font-weight: 700;
+          width: 14%;
+          text-align: left;
+          padding-right: 10px;
+        }
+
+        input {
+          width: 100%;
+          border: 1px solid #ccc;
+          color: black;
+          padding: 4px;
+        }
+      }
+    }
+  }
+}
+
+// Các media queries để đảm bảo responsive
+@media screen and (max-width: 1440px) {
+  .personal {
+    padding: 20px 0;
+
+    .content-personal {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .personal {
+    padding: 20px 0;
+
+    .content-personal {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .personal {
+    padding: 20px 0;
+
+    .content-personal {
+      width: 92%;
+    }
+
+    &--box {
+      padding: 10px 0;
+
+      &--top {
+        margin-bottom: 20px;
+      }
+
+      &--bottom {
+        width: 100%;
+
+        span {
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+
+          label {
+            font-weight: 700;
+            width: 35%;
+            text-align: left;
+            padding-right: 10px;
+          }
+
+          input {
+            width: 65%;
+            border: 1px solid #ccc;
+            color: black;
+            padding: 4px;
+          }
+        }
+      }
+    }
+  }
+  .personal .cover-container {
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .personal {
+    padding: 20px 0;
+
+    .content-personal {
+      width: 85%;
+    }
+
+    &--box {
+      padding: 10px 0;
+
+      &--top {
+        margin-bottom: 20px;
+      }
+
+      &--bottom {
+        width: 100%;
+
+        span {
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+
+          label {
+            font-weight: 700;
+            width: 40%;
+            text-align: left;
+            padding-right: 10px;
+          }
+
+          input {
+            width: 60%;
+            border: 1px solid #ccc;
+            color: black;
+            padding: 4px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState } from "react";
 import "./ProductInfor.scss";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate as useReactNavigate } from "react-router-dom";
 import { createReview, getProductId, updateReview, deleteReview } from "../../../api/product";
 import { formatNumber } from "../../../helper/format";
 import withBase from "../../../hocs/withBase.js";
@@ -18,7 +18,7 @@ import Swal from "sweetalert2";
 
 const moment = require("moment");
 
-function ProductInfor({ dispatch, navigate }) {
+function ProductInfor({ dispatch }) {
     const { id } = useParams();
     const { pathname } = useLocation();
     const [data, setData] = useState(null);
@@ -34,6 +34,9 @@ function ProductInfor({ dispatch, navigate }) {
         rating: 0,
         comment: "",
     });
+    const [commentError, setCommentError] = useState("");
+
+    const navigate = useReactNavigate(); // Đổi tên hook
 
     const fetchData = async () => {
         try {
@@ -105,7 +108,17 @@ function ProductInfor({ dispatch, navigate }) {
         setDataComment({ ...dataComment, rating: starValue });
     };
 
+    const countWords = (str) => {
+        return str.trim().split(/\s+/).length;
+    };
+
     const handleComment = async () => {
+        const wordCount = countWords(dataComment.comment);
+        if (wordCount > 100) {
+            setCommentError("Nội dung bình luận không được vượt quá 100 từ.");
+            return;
+        }
+
         try {
             if (!user) {
                 Swal.fire({
@@ -191,6 +204,10 @@ function ProductInfor({ dispatch, navigate }) {
                 }
             }
         });
+    };
+
+    const handleUserClick = (userId) => {
+        navigate(`/user/get-user-id/${userId}`);
     };
 
     useEffect(() => {
@@ -316,7 +333,7 @@ function ProductInfor({ dispatch, navigate }) {
                             <div className="comment--box--list">
                                 {data?.reviews?.slice(0, limitComment)?.map((item) => (
                                     <div className="comment--box--list--box" key={item?._id}>
-                                        <div className="comment--box--list--box--user">
+                                        <div className="comment--box--list--box--user" onClick={() => handleUserClick(item?.user._id)}>
                                             <img src={item?.user?.profilePicture} alt="User Profile" />
                                             <h3>{item?.user.name}</h3>
                                         </div>
@@ -386,10 +403,12 @@ function ProductInfor({ dispatch, navigate }) {
                                 placeholder="Mời bạn chia sẻ thêm cảm nhận..."
                                 rows={8}
                                 value={dataComment.comment}
-                                onChange={(e) =>
-                                    setDataComment({ ...dataComment, comment: e.target.value })
-                                }
+                                onChange={(e) => {
+                                    setDataComment({ ...dataComment, comment: e.target.value });
+                                    setCommentError("");
+                                }}
                             />
+                            {commentError && <p style={{ color: 'red' }}>{commentError}</p>}
                         </div>
                         <button
                             disabled={!dataComment.comment || dataComment.rating === 0}
